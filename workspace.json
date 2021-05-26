@@ -4,6 +4,13 @@
     "defaultCollection": "@nrwl/react-native"
   },
   "defaultProject": "daily-horoscope",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    }
+  },
   "projects": {
     "daily-horoscope": {
       "root": "apps/daily-horoscope",
@@ -28,9 +35,7 @@
         },
         "bundle-ios": {
           "executor": "@nrwl/react-native:bundle",
-          "outputs": [
-            "apps/daily-horoscope/build"
-          ],
+          "outputs": ["apps/daily-horoscope/build"],
           "options": {
             "entryFile": "apps/daily-horoscope/src/main.tsx",
             "platform": "ios",
@@ -64,18 +69,35 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/daily-horoscope/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/daily-horoscope/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/daily-horoscope"
-          ],
+          "outputs": ["coverage/apps/daily-horoscope"],
           "options": {
             "jestConfig": "apps/daily-horoscope/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui": {
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
           }
         }

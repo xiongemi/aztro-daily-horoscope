@@ -30,7 +30,7 @@
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "react": "17.0.1",
-    "react-dom": "17.0.2",
+    "react-dom": "17.0.1",
     "react-native": "0.64.1",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.0.0"

@@ -7,7 +7,16 @@
   "generators": {
     "@nrwl/react": {
       "application": {
+        "style": "none",
+        "linter": "eslint",
         "babel": true
+      },
+      "component": {
+        "style": "none"
+      },
+      "library": {
+        "style": "none",
+        "linter": "eslint"
       }
     }
   },
@@ -120,6 +129,108 @@
           "options": {
             "jestConfig": "apps/daily-horoscope/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "daily-horoscope-web": {
+      "root": "apps/daily-horoscope-web",
+      "sourceRoot": "apps/daily-horoscope-web/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/daily-horoscope-web",
+            "index": "apps/daily-horoscope-web/src/index.html",
+            "main": "apps/daily-horoscope-web/src/main.tsx",
+            "polyfills": "apps/daily-horoscope-web/src/polyfills.ts",
+            "tsConfig": "apps/daily-horoscope-web/tsconfig.app.json",
+            "assets": [
+              "apps/daily-horoscope-web/src/favicon.ico",
+              "apps/daily-horoscope-web/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/daily-horoscope-web/src/environments/environment.ts",
+                  "with": "apps/daily-horoscope-web/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "daily-horoscope-web:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "daily-horoscope-web:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/daily-horoscope-web/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/daily-horoscope-web"],
+          "options": {
+            "jestConfig": "apps/daily-horoscope-web/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "daily-horoscope-web-e2e": {
+      "root": "apps/daily-horoscope-web-e2e",
+      "sourceRoot": "apps/daily-horoscope-web-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/daily-horoscope-web-e2e/cypress.json",
+            "tsConfig": "apps/daily-horoscope-web-e2e/tsconfig.e2e.json",
+            "devServerTarget": "daily-horoscope-web:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "daily-horoscope-web:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/daily-horoscope-web-e2e/**/*.{js,ts}"]
           }
         }
       }

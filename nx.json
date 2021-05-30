@@ -27,6 +27,13 @@
     },
     "daily-horoscope": {
       "tags": []
+    },
+    "daily-horoscope-web": {
+      "tags": []
+    },
+    "daily-horoscope-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["daily-horoscope-web"]
     }
   }
 }

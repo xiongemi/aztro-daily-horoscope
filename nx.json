@@ -19,13 +19,13 @@
     }
   },
   "projects": {
-    "daily-horoscope": {
-      "tags": []
-    },
     "ui": {
       "tags": []
     },
     "services": {
+      "tags": []
+    },
+    "daily-horoscope": {
       "tags": []
     }
   }

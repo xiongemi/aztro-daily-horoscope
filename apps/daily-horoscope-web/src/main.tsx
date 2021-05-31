@@ -1,14 +1,7 @@
-import { StrictMode } from 'react';
-import * as ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { AppRegistry } from 'react-native';
+import { App } from './app/app';
 
-import App from './app/app';
-
-ReactDOM.render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-  document.getElementById('root')
-);
+AppRegistry.registerComponent('main', () => App);
+AppRegistry.runApplication('main', {
+  rootTag: document.getElementById('root'),
+});

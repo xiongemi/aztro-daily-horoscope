@@ -1,15 +1,17 @@
 {
-  "name": "DailyHoroscope",
+  "name": "daily-horoscope",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "react-native": "*",
-    "react": "*",
-    "@testing-library/react-native": "*",
-    "@testing-library/jest-native": "*",
     "@react-navigation/native": "*",
     "@react-navigation/stack": "*",
+    "@testing-library/jest-native": "*",
     "@testing-library/react": "*",
-    "react-native-gesture-handler": "*"
+    "@testing-library/react-native": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*"
   }
 }

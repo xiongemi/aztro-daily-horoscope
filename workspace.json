@@ -3,7 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/react-native"
   },
-  "defaultProject": "daily-horoscope-web",
+  "defaultProject": "daily-horoscope-app",
   "generators": {
     "@nrwl/react": {
       "application": {
@@ -63,9 +63,9 @@
         }
       }
     },
-    "daily-horoscope-web": {
-      "root": "apps/daily-horoscope",
-      "sourceRoot": "apps/daily-horoscope/src",
+    "daily-horoscope-app": {
+      "root": "apps/daily-horoscope-app",
+      "sourceRoot": "apps/daily-horoscope-app/src",
       "projectType": "application",
       "targets": {
         "start": {
@@ -86,11 +86,11 @@
         },
         "bundle-ios": {
           "executor": "@nrwl/react-native:bundle",
-          "outputs": ["apps/daily-horoscope/build"],
+          "outputs": ["apps/daily-horoscope-app/build"],
           "options": {
-            "entryFile": "apps/daily-horoscope/src/main.tsx",
+            "entryFile": "apps/daily-horoscope-app/src/main.tsx",
             "platform": "ios",
-            "bundleOutput": "dist/apps/daily-horoscope/ios/main.bundle"
+            "bundleOutput": "dist/apps/daily-horoscope-app/ios/main.bundle"
           }
         },
         "run-android": {
@@ -100,17 +100,17 @@
         "build-android": {
           "executor": "@nrwl/react-native:build-android",
           "outputs": [
-            "apps/daily-horoscope/android/app/build/outputs/bundle",
-            "apps/daily-horoscope/android/app/build/outputs/apk"
+            "apps/daily-horoscope-app/android/app/build/outputs/bundle",
+            "apps/daily-horoscope-app/android/app/build/outputs/apk"
           ],
           "options": {}
         },
         "bundle-android": {
           "executor": "@nrwl/react-native:bundle",
           "options": {
-            "entryFile": "apps/daily-horoscope/src/main.tsx",
+            "entryFile": "apps/daily-horoscope-app/src/main.tsx",
             "platform": "android",
-            "bundleOutput": "dist/apps/daily-horoscope/android/main.bundle"
+            "bundleOutput": "dist/apps/daily-horoscope-app/android/main.bundle"
           }
         },
         "sync-deps": {
@@ -120,14 +120,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/daily-horoscope/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/daily-horoscope-app/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/daily-horoscope"],
+          "outputs": ["coverage/apps/daily-horoscope-app"],
           "options": {
-            "jestConfig": "apps/daily-horoscope/jest.config.js",
+            "jestConfig": "apps/daily-horoscope-app/jest.config.js",
             "passWithNoTests": true
           }
         }

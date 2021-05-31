@@ -1,6 +1,7 @@
 {
   "name": "aztro-daily-horoscope",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "nx": "nx",
@@ -25,7 +26,6 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help"
   },
-  "private": true,
   "dependencies": {
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
@@ -35,6 +35,10 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.1",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "^2.2.0",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "^3.3.0",
     "react-native-web": "^0.16.3",
     "react-router-dom": "5.2.0",
     "regenerator-runtime": "0.13.7",
@@ -87,10 +91,6 @@
     "metro-react-native-babel-preset": "0.66.0",
     "metro-resolver": "0.66.0",
     "prettier": "2.2.1",
-    "react-native-gesture-handler": "^1.10.3",
-    "react-native-reanimated": "^2.2.0",
-    "react-native-safe-area-context": "^3.2.0",
-    "react-native-screens": "^3.3.0",
     "react-test-renderer": "17.0.1",
     "ts-jest": "26.5.5",
     "ts-node": "~9.1.1",

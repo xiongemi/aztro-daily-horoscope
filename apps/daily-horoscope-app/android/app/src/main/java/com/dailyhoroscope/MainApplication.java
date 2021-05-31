@@ -31,7 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected String getJSMainModuleName() {
-          return "apps/daily-horoscope/src/main";
+          return "apps/daily-horoscope-app/src/main";
         }
       };
 

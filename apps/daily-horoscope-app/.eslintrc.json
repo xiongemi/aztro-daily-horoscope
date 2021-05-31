@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["apps/daily-horoscope/tsconfig.*?.json"]
+        "project": ["apps/daily-horoscope-app/tsconfig.*?.json"]
       },
       "rules": {}
     },

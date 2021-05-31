@@ -6,6 +6,10 @@
     "react-native": "*",
     "react": "*",
     "@testing-library/react-native": "*",
-    "@testing-library/jest-native": "*"
+    "@testing-library/jest-native": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/stack": "*",
+    "@testing-library/react": "*",
+    "react-native-gesture-handler": "*"
   }
 }

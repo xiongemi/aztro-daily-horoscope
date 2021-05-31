@@ -3,7 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/react-native"
   },
-  "defaultProject": "daily-horoscope",
+  "defaultProject": "daily-horoscope-web",
   "generators": {
     "@nrwl/react": {
       "application": {
@@ -63,7 +63,7 @@
         }
       }
     },
-    "daily-horoscope": {
+    "daily-horoscope-web": {
       "root": "apps/daily-horoscope",
       "sourceRoot": "apps/daily-horoscope/src",
       "projectType": "application",

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import { HoroscopeItem } from '../horoscope-item/horoscope-item';
-import { AdhHoroscopeItem } from '../models/horoscope-item.interface';
-import { AdhHoroscopeList } from '../models/horoscope-list.const';
-import { AdhHoroscope } from '../models/horoscope.enum';
+import {
+  AdhHoroscopeItem,
+  AdhHoroscopeList,
+  AdhHoroscope,
+} from '@aztro-daily-horoscope/models';
 
 export function HoroscopeList() {
   const [userHoroscope, setUserHoroscope] = useState<AdhHoroscope>();

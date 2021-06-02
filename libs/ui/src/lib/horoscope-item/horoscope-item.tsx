@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListItem } from 'react-native-elements';
-import { AdhHoroscopeItem } from '../models/horoscope-item.interface';
+import { AdhHoroscopeItem } from '@aztro-daily-horoscope/models';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export interface HoroscopeItemProps {

@@ -1,8 +1,9 @@
 {
-  "name": "daily-horoscope",
+  "name": "daily-horoscope-app",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@react-native-masked-view/masked-view": "*",
     "@react-navigation/native": "*",
     "@react-navigation/stack": "*",
     "@testing-library/jest-native": "*",
@@ -10,10 +11,11 @@
     "@testing-library/react-native": "*",
     "react": "*",
     "react-native": "*",
+    "react-native-elements": "*",
     "react-native-gesture-handler": "*",
+    "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
-    "react-native-vector-icons": "*",
-    "react-native-elements": "*"
+    "react-native-vector-icons": "*"
   }
 }

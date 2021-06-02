@@ -14,8 +14,8 @@ export function HoroscopeList() {
     <FlatList
       keyExtractor={keyExtractor}
       data={AdhHoroscopeList}
-      renderItem={({ item, index }) => (
-        <ListItem key={index} bottomDivider>
+      renderItem={({ item }) => (
+        <ListItem bottomDivider>
           <Icon name={item.icon} />
           <ListItem.Content>
             <ListItem.Title>{item.horoscope}</ListItem.Title>

@@ -27,7 +27,7 @@ export const AdhHoroscopeList: AdhHoroscopeItem[] = [
     icon: 'zodiac-virgo',
   },
   {
-    horoscope: AdhHoroscope.Virgo,
+    horoscope: AdhHoroscope.Libra,
     icon: 'zodiac-libra',
   },
   {

@@ -5,16 +5,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { HoroscopeList } from '@aztro-daily-horoscope/ui';
+import { Header } from 'react-native-elements';
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="horoscope-list" component={HoroscopeList} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <Header centerComponent={{ text: 'Daily Horoscope' }} />
+      <HoroscopeList />
+    </>
   );
 };
 

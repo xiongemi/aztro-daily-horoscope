@@ -40,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A6DB9E784844F39166C905 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* DailyHoroscope */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +109,6 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		09A6DB9E784844F39166C905 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 

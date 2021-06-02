@@ -5,8 +5,6 @@ import { AdhHoroscopeItem } from '../models/horoscope-item.interface';
 import { AdhHoroscopeList } from '../models/horoscope-list.const';
 import { AdhHoroscope } from '../models/horoscope.enum';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 export function HoroscopeList() {
   const [userHoroscope, setUserHoroscope] = useState<AdhHoroscope>();
 

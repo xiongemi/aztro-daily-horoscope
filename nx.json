@@ -34,6 +34,9 @@
     "daily-horoscope-web-e2e": {
       "tags": [],
       "implicitDependencies": ["daily-horoscope-web"]
+    },
+    "store": {
+      "tags": []
     }
   }
 }

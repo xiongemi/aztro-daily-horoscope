@@ -1,2 +1,3 @@
+export * from './lib/horoscope-item/horoscope-item';
 export * from './lib/horoscope-list/horoscope-list';
 export * from './lib/ui';

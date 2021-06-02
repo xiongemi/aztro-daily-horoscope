@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/ui',
     '<rootDir>/libs/services',
     '<rootDir>/apps/daily-horoscope-web',
+    '<rootDir>/libs/store',
   ],
 };

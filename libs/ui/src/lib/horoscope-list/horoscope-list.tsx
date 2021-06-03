@@ -1,13 +1,15 @@
 import React from 'react';
 import { FlatList } from 'react-native';
+import { connect } from 'react-redux';
 import {
   AdhHoroscopeItem,
   AdhHoroscopeList,
 } from '@aztro-daily-horoscope/models';
 import { ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { HoroscopeListProps, mapDispatchToProps } from './horoscope-list.props';
 
-export function HoroscopeList() {
+export function HoroscopeList({ setUserHoroscope }: HoroscopeListProps) {
   const keyExtractor = (item: AdhHoroscopeItem) => item.horoscope;
 
   return (
@@ -15,7 +17,10 @@ export function HoroscopeList() {
       keyExtractor={keyExtractor}
       data={AdhHoroscopeList}
       renderItem={({ item }) => (
-        <ListItem bottomDivider>
+        <ListItem
+          bottomDivider
+          onPress={() => setUserHoroscope(item.horoscope)}
+        >
           <Icon name={item.icon} />
           <ListItem.Content>
             <ListItem.Title>{item.horoscope}</ListItem.Title>
@@ -27,4 +32,7 @@ export function HoroscopeList() {
   );
 }
 
-export default HoroscopeList;
+export const HoroscopeListContainer = connect(
+  null,
+  mapDispatchToProps
+)(HoroscopeList);

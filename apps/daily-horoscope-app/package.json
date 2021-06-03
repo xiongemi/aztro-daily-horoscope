@@ -16,6 +16,12 @@
     "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
-    "react-native-vector-icons": "*"
+    "react-native-vector-icons": "*",
+    "@storybook/react": "*",
+    "@storybook/addon-knobs": "*",
+    "react-redux": "*",
+    "@reduxjs/toolkit": "*",
+    "redux-observable": "*",
+    "redux-logger": "*"
   }
 }

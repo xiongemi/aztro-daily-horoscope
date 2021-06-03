@@ -7,5 +7,5 @@ export default {
 };
 
 export const primary = () => {
-  return <HoroscopeList />;
+  return <HoroscopeList setUserHoroscope={() => {}} />;
 };

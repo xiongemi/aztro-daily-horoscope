@@ -1,4 +1,4 @@
-export enum AdhFortuneDay {
+export enum AdhHoroscopeDay {
   today,
   tomorrow,
   yesterday,

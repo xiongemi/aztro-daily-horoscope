@@ -1,5 +1,6 @@
-const getWebpackConfig = require('@nrwl/react/plugins/webpack');
 const path = require('path');
+
+const getWebpackConfig = require('@nrwl/react/plugins/webpack');
 
 function getCustomWebpackConfig(webpackConfig) {
   const config = getWebpackConfig(webpackConfig);

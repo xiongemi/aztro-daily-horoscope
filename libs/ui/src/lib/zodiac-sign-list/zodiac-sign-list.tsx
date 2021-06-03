@@ -1,25 +1,29 @@
+import {
+  AdhZodiacSignItem,
+  AdhZodiacSignList,
+} from '@aztro-daily-horoscope/models';
 import React from 'react';
 import { FlatList } from 'react-native';
-import { connect } from 'react-redux';
-import {
-  AdhHoroscopeItem,
-  AdhHoroscopeList,
-} from '@aztro-daily-horoscope/models';
 import { ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { HoroscopeListProps, mapDispatchToProps } from './horoscope-list.props';
+import { connect } from 'react-redux';
 
-export function HoroscopeList({ setUserHoroscope }: HoroscopeListProps) {
-  const keyExtractor = (item: AdhHoroscopeItem) => item.horoscope;
+import {
+  ZodiacSignListProps,
+  mapDispatchToProps,
+} from './zodiac-sign-list.props';
+
+export function ZodiacSignList({ setUserZodiacSign }: ZodiacSignListProps) {
+  const keyExtractor = (item: AdhZodiacSignItem) => item.horoscope;
 
   return (
     <FlatList
       keyExtractor={keyExtractor}
-      data={AdhHoroscopeList}
+      data={AdhZodiacSignList}
       renderItem={({ item }) => (
         <ListItem
           bottomDivider
-          onPress={() => setUserHoroscope(item.horoscope)}
+          onPress={() => setUserZodiacSign(item.horoscope)}
         >
           <Icon name={item.icon} />
           <ListItem.Content>
@@ -32,7 +36,7 @@ export function HoroscopeList({ setUserHoroscope }: HoroscopeListProps) {
   );
 }
 
-export const HoroscopeListContainer = connect(
+export const ZodiacSignListContainer = connect(
   null,
   mapDispatchToProps
-)(HoroscopeList);
+)(ZodiacSignList);

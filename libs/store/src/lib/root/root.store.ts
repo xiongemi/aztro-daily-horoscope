@@ -2,8 +2,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import { createEpicMiddleware } from 'redux-observable';
 
-import { rootReducer } from './root.reducer';
 import { rootEpics } from './root.epics';
+import { rootReducer } from './root.reducer';
+
+declare const process;
 
 const epicMiddleware = createEpicMiddleware();
 const isDevelopment = process.env.NODE_ENV === 'development';

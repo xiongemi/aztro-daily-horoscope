@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import HoroscopeList from './horoscope-list';
+import ZodiacSignList from './zodiac-sign-list';
 
-describe('HoroscopeList', () => {
+describe('ZodiacSignList', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<HoroscopeList />);
+    const { baseElement } = render(<ZodiacSignList />);
     expect(baseElement).toBeTruthy();
   });
 });

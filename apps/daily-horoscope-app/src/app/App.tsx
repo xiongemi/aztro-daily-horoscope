@@ -1,10 +1,9 @@
-import * as React from 'react';
+import { store } from '@aztro-daily-horoscope/store';
+import { ZodiacSignListContainer } from '@aztro-daily-horoscope/ui';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import * as React from 'react';
 import { Provider } from 'react-redux';
-import { store } from '@aztro-daily-horoscope/store';
-
-import { HoroscopeListContainer } from '@aztro-daily-horoscope/ui';
 
 const Stack = createStackNavigator();
 
@@ -15,7 +14,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen
             name="Horoscope List"
-            component={HoroscopeListContainer}
+            component={ZodiacSignListContainer}
           />
         </Stack.Navigator>
       </NavigationContainer>

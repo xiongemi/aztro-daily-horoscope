@@ -1,1 +1,1 @@
-export * from './lib/horoscope-list/horoscope-list';
+export * from './lib/zodiac-sign-list/zodiac-sign-list';

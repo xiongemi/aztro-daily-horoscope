@@ -1,9 +1,9 @@
-import { AdhHoroscope } from './horoscope.enum';
+import { AdhZodiacSign } from './zodiac-sign.enum';
 
-export interface AdhFortune {
+export interface AdhHoroscope {
   currentDate: Date;
   description: string;
-  compatibility: AdhHoroscope;
+  compatibility: AdhZodiacSign;
   mood: string;
   color: string;
   luckyNumber: number;

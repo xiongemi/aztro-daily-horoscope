@@ -1,12 +1,13 @@
-import { AdhFortuneDay, AdhHoroscope } from '@aztro-daily-horoscope/models';
-import { AztroFortuneResponse } from './aztro-fortune-response.interface';
+import { AdhHoroscopeDay, AdhZodiacSign } from '@aztro-daily-horoscope/models';
 
-async function getFortune(
-  horoscope: AdhHoroscope,
-  day: AdhFortuneDay
-): Promise<AztroFortuneResponse> {
+import { AztroHoroscpeResponse } from './aztro-horoscope-response.interface';
+
+async function getHoroscope(
+  zodiacSign: AdhZodiacSign,
+  day: AdhHoroscopeDay
+): Promise<AztroHoroscpeResponse> {
   const response = await fetch(
-    `https://aztro.sameerkumar.website/?sign=${horoscope}&day=${day}`
+    `https://aztro.sameerkumar.website/?sign=${zodiacSign}&day=${day}`
   );
   if (response.ok) {
     return response.json();
@@ -14,4 +15,4 @@ async function getFortune(
   throw response;
 }
 
-export const aztroService = { getFortune };
+export const aztroService = { getHoroscope };

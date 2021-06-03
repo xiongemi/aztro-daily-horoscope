@@ -1,8 +1,5 @@
-import { AdhHoroscopeItem } from '@aztro-daily-horoscope/models';
-import { FortuneState } from '../fortune/fortune-state.interface';
-
+import { HoroscopeState } from '../horoscope/horoscope-state.interface';
 export interface RootState {
   error?: Error | string;
-  horoscope?: AdhHoroscopeItem;
-  fortune: FortuneState;
+  horoscope?: HoroscopeState;
 }

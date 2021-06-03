@@ -1,4 +1,4 @@
-import { HoroscopeList } from '@aztro-daily-horoscope/ui';
+import { ZodiacSignList } from '@aztro-daily-horoscope/ui';
 
 export function App() {
   return (
@@ -14,7 +14,7 @@ export function App() {
     src: url(${require('react-native-vector-icons/Fonts/FontAwesome.ttf')}) format('truetype');
   }
 `}</style>
-      <HoroscopeList />
+      <ZodiacSignList />
     </>
   );
 }

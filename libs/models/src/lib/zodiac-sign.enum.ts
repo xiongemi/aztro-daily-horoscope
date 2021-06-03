@@ -1,4 +1,4 @@
-export enum AdhHoroscope {
+export enum AdhZodiacSign {
   Aries = 'Aries',
   Taurus = 'Taurus',
   Gemini = 'Gemini',

@@ -7,11 +7,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { LoadingStatus } from '../models/loading-status.enum';
 
+import { initialHoroscopeState } from './horoscope-state.initial';
 import { HoroscopeState } from './horoscope-state.interface';
 
 export const horoscopeSlice = createSlice({
   name: 'horoscope',
-  initialState: { loadingStatus: LoadingStatus.Initial },
+  initialState: initialHoroscopeState,
   reducers: {
     setUserZodiacSign(
       state: HoroscopeState,

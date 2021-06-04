@@ -2,6 +2,7 @@ import {
   AdhZodiacSignItem,
   AdhZodiacSignList,
 } from '@aztro-daily-horoscope/models';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
@@ -14,17 +15,21 @@ import {
 } from './zodiac-sign-list.props';
 
 export function ZodiacSignList({ setUserZodiacSign }: ZodiacSignListProps) {
+  const navigation = useNavigation();
+
   const keyExtractor = (item: AdhZodiacSignItem) => item.zodiacSign;
+
+  const zodiacListItemPress = (item: AdhZodiacSignItem) => {
+    navigation.navigate('Horoscope Card');
+    setUserZodiacSign(item.zodiacSign);
+  };
 
   return (
     <FlatList
       keyExtractor={keyExtractor}
       data={AdhZodiacSignList}
       renderItem={({ item }) => (
-        <ListItem
-          bottomDivider
-          onPress={() => setUserZodiacSign(item.zodiacSign)}
-        >
+        <ListItem bottomDivider onPress={() => zodiacListItemPress(item)}>
           <Icon name={item.icon} />
           <ListItem.Content>
             <ListItem.Title>{item.zodiacSign}</ListItem.Title>

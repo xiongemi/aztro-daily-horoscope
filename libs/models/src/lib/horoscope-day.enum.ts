@@ -1,5 +1,1 @@
-export enum AdhHoroscopeDay {
-  today,
-  tomorrow,
-  yesterday,
-}
+export type AdhHoroscopeDay = 'today' | 'tomorrow' | 'yesterday';

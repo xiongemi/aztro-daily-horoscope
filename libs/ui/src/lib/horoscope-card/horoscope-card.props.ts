@@ -16,7 +16,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    getuserHoroscope(day: AdhHoroscopeDay) {
+    getUserHoroscope(day: AdhHoroscopeDay) {
       dispatch(horoscopeSlice.actions.getUserHoroscope(day));
     },
   };

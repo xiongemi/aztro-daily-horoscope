@@ -1,4 +1,4 @@
-import { store } from '@aztro-daily-horoscope/store';
+import { rootStore } from '@aztro-daily-horoscope/store';
 import {
   ZodiacSignListContainer,
   HoroscopeCardContainer,
@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <Provider store={rootStore}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen

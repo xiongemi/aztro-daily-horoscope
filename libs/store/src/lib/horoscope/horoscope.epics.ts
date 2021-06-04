@@ -28,6 +28,7 @@ export const getUserHoroscopeEpic = (
   state$: StateObservable<RootState>
 ) =>
   action$.pipe(
+    // listens to action getUserHoroscope
     ofType(horoscopeSlice.actions.getUserHoroscope.type),
     // get user's current zodiac sign
     withLatestFrom(state$.pipe(map(horoscopeSelectors.getUserZodiac))),
@@ -36,7 +37,7 @@ export const getUserHoroscopeEpic = (
         PayloadAction<AdhHoroscopeDay>,
         AdhZodiacSign
       ]) => {
-        // call service
+        // call aztroService service to get user's horoscope from API
         return from(aztroService.getHoroscope(zodiacSign, action.payload)).pipe(
           // map response model to app model
           map(transfromAztroHoroscpeResponseToAdhHoroscope),

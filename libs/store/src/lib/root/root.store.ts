@@ -10,7 +10,7 @@ declare const process;
 const epicMiddleware = createEpicMiddleware();
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-const store = configureStore({
+const rootStore = configureStore({
   reducer: rootReducer,
   middleware: isDevelopment ? [epicMiddleware, logger] : [epicMiddleware],
   devTools: isDevelopment,
@@ -18,4 +18,4 @@ const store = configureStore({
 
 epicMiddleware.run(rootEpics);
 
-export { store };
+export { rootStore };

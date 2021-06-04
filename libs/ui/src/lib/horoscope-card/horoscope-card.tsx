@@ -15,11 +15,11 @@ export function HoroscopeCard({
   zodiacItem,
   horoscope,
   loadingStatus,
-  getuserHoroscope,
+  getUserHoroscope,
 }: HoroscopeCardProps) {
   useEffect(() => {
-    getuserHoroscope('today');
-  }, [getuserHoroscope]);
+    getUserHoroscope('today');
+  }, [getUserHoroscope]);
 
   return (
     <SafeAreaView>
@@ -49,7 +49,7 @@ export function HoroscopeCard({
               </Text>
             </>
           ) : loadingStatus === LoadingStatus.Error ? (
-            <Text h2>Oops!</Text>
+            <Text h2>Oops! Something went wrong. Please try agian.</Text>
           ) : (
             <ActivityIndicator />
           )}

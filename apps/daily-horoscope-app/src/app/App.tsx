@@ -1,7 +1,7 @@
 import { store } from '@aztro-daily-horoscope/store';
 import {
   ZodiacSignListContainer,
-  HoroscopeCard,
+  HoroscopeCardContainer,
 } from '@aztro-daily-horoscope/ui';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -19,7 +19,10 @@ const App = () => {
             name="Zodiac Sign List"
             component={ZodiacSignListContainer}
           />
-          <Stack.Screen name="Horoscope Card" component={HoroscopeCard} />
+          <Stack.Screen
+            name="Horoscope Card"
+            component={HoroscopeCardContainer}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

@@ -1,11 +1,11 @@
-import { AdhZodiacSign } from '@aztro-daily-horoscope/models';
+import { AdhZodiacSignItem } from '@aztro-daily-horoscope/models';
 import { horoscopeSlice } from '@aztro-daily-horoscope/store';
 import { Dispatch } from '@reduxjs/toolkit';
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    setUserZodiacSign(zodiacSign: AdhZodiacSign) {
-      dispatch(horoscopeSlice.actions.setUserZodiacSign(zodiacSign));
+    setUserZodiacSignItem(zodiacSignItem: AdhZodiacSignItem) {
+      dispatch(horoscopeSlice.actions.setUserZodiacSignItem(zodiacSignItem));
     },
   };
 };

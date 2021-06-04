@@ -1,13 +1,13 @@
 import {
   AdhHoroscope,
   AdhHoroscopeDay,
-  AdhZodiacSign,
+  AdhZodiacSignItem,
 } from '@aztro-daily-horoscope/models';
 
 import { LoadingStatus } from '../models/loading-status.enum';
 
 export interface HoroscopeState {
-  zodiacSign?: AdhZodiacSign;
+  zodiacSignItem?: AdhZodiacSignItem;
   loadingStatus: LoadingStatus;
   day?: AdhHoroscopeDay;
   horoscope?: AdhHoroscope;

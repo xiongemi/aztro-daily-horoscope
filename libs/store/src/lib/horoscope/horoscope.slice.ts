@@ -1,7 +1,7 @@
 import {
   AdhHoroscope,
   AdhHoroscopeDay,
-  AdhZodiacSign,
+  AdhZodiacSignItem,
 } from '@aztro-daily-horoscope/models';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -14,11 +14,11 @@ export const horoscopeSlice = createSlice({
   name: 'horoscope',
   initialState: initialHoroscopeState,
   reducers: {
-    setUserZodiacSign(
+    setUserZodiacSignItem(
       state: HoroscopeState,
-      action: PayloadAction<AdhZodiacSign>
+      action: PayloadAction<AdhZodiacSignItem>
     ) {
-      state.zodiacSign = action.payload;
+      state.zodiacSignItem = action.payload;
     },
     getUserHoroscope(
       state: HoroscopeState,

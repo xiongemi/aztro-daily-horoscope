@@ -6,8 +6,11 @@ async function getHoroscope(
   zodiacSign: AdhZodiacSign,
   day: AdhHoroscopeDay
 ): Promise<AztroHoroscpeResponse> {
-  const response = await fetch(
-    `https://aztro.sameerkumar.website/?sign=${zodiacSign}&day=${day}`
+  const response: Response = await fetch(
+    `https://aztro.sameerkumar.website/?sign=${zodiacSign.toLowerCase()}&day=${day}`,
+    {
+      method: 'POST',
+    }
   );
   if (response.ok) {
     return response.json();

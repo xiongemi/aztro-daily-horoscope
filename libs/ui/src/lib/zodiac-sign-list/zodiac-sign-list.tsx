@@ -14,14 +14,14 @@ import {
   mapDispatchToProps,
 } from './zodiac-sign-list.props';
 
-export function ZodiacSignList({ setUserZodiacSign }: ZodiacSignListProps) {
+export function ZodiacSignList({ setUserZodiacSignItem }: ZodiacSignListProps) {
   const navigation = useNavigation();
 
   const keyExtractor = (item: AdhZodiacSignItem) => item.zodiacSign;
 
   const zodiacListItemPress = (item: AdhZodiacSignItem) => {
     navigation.navigate('Horoscope Card');
-    setUserZodiacSign(item.zodiacSign);
+    setUserZodiacSignItem(item);
   };
 
   return (

@@ -29,7 +29,7 @@ export const getUserHoroscopeEpic = (
 ) =>
   action$.pipe(
     ofType(horoscopeSlice.actions.getUserHoroscope.type),
-    // get user's current horoscope
+    // get user's current zodiac sign
     withLatestFrom(state$.pipe(map(horoscopeSelectors.getUserZodiac))),
     switchMap(
       ([action, zodiacSign]: [
@@ -55,4 +55,4 @@ export const getUserHoroscopeEpic = (
     )
   );
 
-export const fortuneEpics: Epic[] = [getUserHoroscopeEpic];
+export const horoscopeEpics: Epic[] = [getUserHoroscopeEpic];

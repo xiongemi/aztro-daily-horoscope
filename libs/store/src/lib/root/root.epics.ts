@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable';
 
-import { fortuneEpics } from '../horoscope/horoscope.epics';
+import { horoscopeEpics } from '../horoscope/horoscope.epics';
 
-export const rootEpics = combineEpics(...fortuneEpics);
+export const rootEpics = combineEpics(...horoscopeEpics);

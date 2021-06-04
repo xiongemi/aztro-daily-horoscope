@@ -1,5 +1,3 @@
-const path = require('path');
-
 const getWebpackConfig = require('@nrwl/react/plugins/webpack');
 
 function getCustomWebpackConfig(webpackConfig) {
@@ -7,26 +5,43 @@ function getCustomWebpackConfig(webpackConfig) {
   const isProduction = webpackConfig.mode === 'production';
 
   if (!isProduction) {
-    const babelLoader = config.module.rules.find((rule) =>
-      rule.loader.toString().includes('babel-loader')
-    );
-    babelLoader.include = [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, '../../libs/ui'),
-      path.resolve(__dirname, '../../node_modules/react-native-elements'),
-      path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
-      path.resolve(__dirname, '../../node_modules/react-native-ratings'),
-    ];
+    config.resolve.alias = {
+      'react-native': 'react-native-web',
+    };
 
-    config.module.rules.push({
-      test: /\.js$/,
-      loader: 'babel-loader',
-      include: [
-        path.resolve(__dirname, '../../node_modules/react-native-elements'),
-        path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
-        path.resolve(__dirname, '../../node_modules/react-native-ratings'),
-      ],
-    });
+    config.module.rules.push(
+      {
+        test: /\.ttf$/,
+        loader: require.resolve('file-loader'),
+        options: { esModule: false, name: 'static/media/[path][name].[ext]' },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: function (content) {
+          return (
+            /node_modules/.test(content) &&
+            !/\/react-native-elements\//.test(content) &&
+            !/\/react-native-vector-icons\//.test(content) &&
+            !/\/react-native-ratings\//.test(content)
+          );
+        },
+        use: {
+          loader: require.resolve('@nrwl/web/src/utils/web-babel-loader.js'),
+          options: {
+            presets: [
+              [
+                '@nrwl/react/babel',
+                {
+                  runtime: 'automatic',
+                  useBuiltIns: 'usage',
+                },
+              ],
+            ],
+            plugins: ['react-native-web'],
+          },
+        },
+      }
+    );
   }
 
   return config;

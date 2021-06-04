@@ -33,7 +33,7 @@ export function HoroscopeCard({
           <Text h4 style={{ width: '100%', textAlign: 'center' }}>
             Your Horoscope for Today
           </Text>
-          {loadingStatus === LoadingStatus.Success ? (
+          {loadingStatus === LoadingStatus.Success && horoscope ? (
             <>
               <Text style={{ marginTop: 10 }}>{horoscope.description}</Text>
               <Text style={{ marginTop: 10 }}>Mood: {horoscope.mood}</Text>
@@ -51,7 +51,7 @@ export function HoroscopeCard({
           ) : loadingStatus === LoadingStatus.Error ? (
             <Text h2>Oops! Something went wrong. Please try agian.</Text>
           ) : (
-            <ActivityIndicator />
+            <ActivityIndicator size="large" />
           )}
         </Card>
       </ScrollView>

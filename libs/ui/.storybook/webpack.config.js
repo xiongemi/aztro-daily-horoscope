@@ -30,34 +30,6 @@ module.exports = async ({ config, mode }) => {
     svgRuleIndex
   ].test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/;
 
-  /*const babelLoader = config.module.rules.find((rule) => {
-    console.log(rule.test, rule.test.toString()?.includes('js'));
-    return rule.test.toString()?.includes('js');
-  });
-  console.log(
-    babelLoader.use[0].options.plugins,
-    babelLoader.use[0].options.presets
-  );
-  babelLoader.include = [
-    ...babelLoader.include,
-    path.resolve(__dirname, '../../../node_modules/react-native-elements'),
-    path.resolve(__dirname, '../../../node_modules/react-native-vector-icons'),
-    path.resolve(
-      __dirname,
-      '../../../node_modules/react-native-status-bar-height'
-    ),
-    path.resolve(__dirname, '../../../node_modules/react-native-ratings'),
-  ];
-  /* babelLoader.use[0].options.presets.push(
-    'module:metro-react-native-babel-preset'
-  ); */
-  // babelLoader.use[0].options.plugins.push('babel-plugin-react-native-web');
-  /*  babelLoader.options.presets.push(
-      `@babel/preset-env`,
-      `@babel/preset-react`
-    ); */
-  // console.log(config.module.rules); */
-
   config.resolve.alias = {
     'react-native': 'react-native-web',
   };
@@ -78,17 +50,14 @@ module.exports = async ({ config, mode }) => {
         options: {
           presets: [
             [
-              '@babel/preset-env',
+              '@nrwl/react/babel',
               {
-                targets: {
-                  chrome: '70',
-                },
+                runtime: 'automatic',
+                useBuiltIns: 'usage',
               },
             ],
-            '@babel/preset-react',
           ],
           plugins: [
-            'babel-plugin-react-native-web',
             [
               '@babel/plugin-transform-runtime',
               {
@@ -96,6 +65,7 @@ module.exports = async ({ config, mode }) => {
               },
             ],
             ['@babel/plugin-proposal-class-properties', { loose: true }],
+            'react-native-web',
           ],
         },
       },

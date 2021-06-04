@@ -5,7 +5,7 @@ import { createEpicMiddleware } from 'redux-observable';
 import { rootEpics } from './root.epics';
 import { rootReducer } from './root.reducer';
 
-declare const process;
+declare const process: any;
 
 const epicMiddleware = createEpicMiddleware();
 const isDevelopment = process.env.NODE_ENV === 'development';

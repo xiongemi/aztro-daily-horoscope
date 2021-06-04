@@ -14,7 +14,7 @@ import {
 } from './zodiac-sign-list.props';
 
 export function ZodiacSignList({ setUserZodiacSign }: ZodiacSignListProps) {
-  const keyExtractor = (item: AdhZodiacSignItem) => item.horoscope;
+  const keyExtractor = (item: AdhZodiacSignItem) => item.zodiacSign;
 
   return (
     <FlatList
@@ -23,11 +23,11 @@ export function ZodiacSignList({ setUserZodiacSign }: ZodiacSignListProps) {
       renderItem={({ item }) => (
         <ListItem
           bottomDivider
-          onPress={() => setUserZodiacSign(item.horoscope)}
+          onPress={() => setUserZodiacSign(item.zodiacSign)}
         >
           <Icon name={item.icon} />
           <ListItem.Content>
-            <ListItem.Title>{item.horoscope}</ListItem.Title>
+            <ListItem.Title>{item.zodiacSign}</ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>

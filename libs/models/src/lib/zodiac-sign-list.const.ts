@@ -3,51 +3,51 @@ import { AdhZodiacSign } from './zodiac-sign.enum';
 
 export const AdhZodiacSignList: AdhZodiacSignItem[] = [
   {
-    horoscope: AdhZodiacSign.Aries,
+    zodiacSign: AdhZodiacSign.Aries,
     icon: 'zodiac-aries',
   },
   {
-    horoscope: AdhZodiacSign.Taurus,
+    zodiacSign: AdhZodiacSign.Taurus,
     icon: 'zodiac-taurus',
   },
   {
-    horoscope: AdhZodiacSign.Gemini,
+    zodiacSign: AdhZodiacSign.Gemini,
     icon: 'zodiac-gemini',
   },
   {
-    horoscope: AdhZodiacSign.Cancer,
+    zodiacSign: AdhZodiacSign.Cancer,
     icon: 'zodiac-cancer',
   },
   {
-    horoscope: AdhZodiacSign.Leo,
+    zodiacSign: AdhZodiacSign.Leo,
     icon: 'zodiac-leo',
   },
   {
-    horoscope: AdhZodiacSign.Virgo,
+    zodiacSign: AdhZodiacSign.Virgo,
     icon: 'zodiac-virgo',
   },
   {
-    horoscope: AdhZodiacSign.Libra,
+    zodiacSign: AdhZodiacSign.Libra,
     icon: 'zodiac-libra',
   },
   {
-    horoscope: AdhZodiacSign.Scorpio,
+    zodiacSign: AdhZodiacSign.Scorpio,
     icon: 'zodiac-scorpio',
   },
   {
-    horoscope: AdhZodiacSign.Sagittarius,
+    zodiacSign: AdhZodiacSign.Sagittarius,
     icon: 'zodiac-sagittarius',
   },
   {
-    horoscope: AdhZodiacSign.Capricorn,
+    zodiacSign: AdhZodiacSign.Capricorn,
     icon: 'zodiac-capricorn',
   },
   {
-    horoscope: AdhZodiacSign.Aquarius,
+    zodiacSign: AdhZodiacSign.Aquarius,
     icon: 'zodiac-aquarius',
   },
   {
-    horoscope: AdhZodiacSign.Pisces,
+    zodiacSign: AdhZodiacSign.Pisces,
     icon: 'zodiac-pisces',
   },
 ];

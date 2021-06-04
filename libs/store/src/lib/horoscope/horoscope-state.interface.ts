@@ -7,7 +7,7 @@ import {
 import { LoadingStatus } from '../models/loading-status.enum';
 
 export interface HoroscopeState {
-  zodiacSign: AdhZodiacSign;
+  zodiacSign?: AdhZodiacSign;
   loadingStatus: LoadingStatus;
   day?: AdhHoroscopeDay;
   horoscope?: AdhHoroscope;

@@ -11,10 +11,13 @@ import { HoroscopeState } from './horoscope-state.interface';
 
 export const horoscopeSlice = createSlice({
   name: 'horoscope',
-  initialState: null,
+  initialState: { loadingStatus: LoadingStatus.Initial },
   reducers: {
-    setUserZodiacSign(_, action: PayloadAction<AdhZodiacSign>) {
-      return action.payload;
+    setUserZodiacSign(
+      state: HoroscopeState,
+      action: PayloadAction<AdhZodiacSign>
+    ) {
+      state.zodiacSign = action.payload;
     },
     getUserHoroscope(
       state: HoroscopeState,

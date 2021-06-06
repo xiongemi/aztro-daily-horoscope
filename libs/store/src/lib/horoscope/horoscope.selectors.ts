@@ -14,17 +14,16 @@ const getHoroscopeState = (rootState: RootState): HoroscopeState =>
 
 const getUserZodiacItem = (
   rootState: RootState
-): AdhZodiacSignItem | undefined =>
-  getHoroscopeState(rootState)?.zodiacSignItem;
+): AdhZodiacSignItem | undefined => getHoroscopeState(rootState).zodiacSignItem;
 
 const getUserZodiac = (rootState: RootState): AdhZodiacSign | undefined =>
   getUserZodiacItem(rootState)?.zodiacSign;
 
 const getUserHoroscope = (rootState: RootState): AdhHoroscope | undefined =>
-  getHoroscopeState(rootState)?.horoscope;
+  getHoroscopeState(rootState).horoscope;
 
 const getHoroscopeLoadingStatus = (rootState: RootState): LoadingStatus =>
-  getHoroscopeState(rootState)?.loadingStatus;
+  getHoroscopeState(rootState).loadingStatus;
 
 export const horoscopeSelectors = {
   getUserZodiacItem,

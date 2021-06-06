@@ -26,7 +26,7 @@ export const horoscopeSlice = createSlice({
     ) {
       state.day = action.payload;
       state.loadingStatus = LoadingStatus.Loading;
-      state.horoscope = null;
+      state.horoscope = undefined;
     },
     gerUserHoroscopeSuccess(
       state: HoroscopeState,

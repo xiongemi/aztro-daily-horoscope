@@ -2,6 +2,7 @@ import {
   AdhHoroscope,
   AdhHoroscopeDay,
   AdhZodiacSign,
+  AdhZodiacSignItem,
 } from '@aztro-daily-horoscope/models';
 import {
   aztroService,
@@ -14,8 +15,14 @@ import {
   ofType,
   StateObservable,
 } from 'redux-observable';
-import { from } from 'rxjs';
-import { withLatestFrom, catchError, map, switchMap } from 'rxjs/operators';
+import { from, of } from 'rxjs';
+import {
+  withLatestFrom,
+  catchError,
+  map,
+  switchMap,
+  filter,
+} from 'rxjs/operators';
 
 import { errorSlice } from '../error/error.slice';
 import { horoscopeSelectors } from '../horoscope/horoscope.selectors';
@@ -31,12 +38,21 @@ export const getUserHoroscopeEpic = (
     // listens to action getUserHoroscope
     ofType(horoscopeSlice.actions.getUserHoroscope.type),
     // get user's current zodiac sign
-    withLatestFrom(state$.pipe(map(horoscopeSelectors.getUserZodiac))),
+    withLatestFrom(
+      state$.pipe(
+        map<RootState, AdhZodiacSign | undefined>(
+          horoscopeSelectors.getUserZodiac
+        )
+      )
+    ),
     switchMap(
       ([action, zodiacSign]: [
         PayloadAction<AdhHoroscopeDay>,
-        AdhZodiacSign
+        AdhZodiacSign | undefined
       ]) => {
+        if (!zodiacSign) {
+          return of(horoscopeSlice.actions.getUserHoroscopeError());
+        }
         // call aztroService service to get user's horoscope from API
         return from(aztroService.getHoroscope(zodiacSign, action.payload)).pipe(
           // map response model to app model

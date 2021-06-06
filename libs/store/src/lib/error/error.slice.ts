@@ -1,6 +1,14 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createSlice,
+  PayloadAction,
+  SliceCaseReducers,
+} from '@reduxjs/toolkit';
 
-export const errorSlice = createSlice({
+export const errorSlice = createSlice<
+  string | Error | null,
+  SliceCaseReducers<string | Error | null>,
+  string
+>({
   name: 'error',
   initialState: null,
   reducers: {

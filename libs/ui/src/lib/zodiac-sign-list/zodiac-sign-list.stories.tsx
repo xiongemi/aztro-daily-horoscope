@@ -11,7 +11,11 @@ export default {
 
 const Stack = createStackNavigator();
 
-export const primary = () => {
+export const primary = () => (
+  <ZodiacSignList setUserZodiacSignItem={() => {}} />
+);
+
+/* {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -22,4 +26,4 @@ export const primary = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}; */

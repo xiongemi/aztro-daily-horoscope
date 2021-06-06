@@ -36,6 +36,11 @@ module.exports = async ({ config, mode }) => {
 
   config.module.rules.push(
     {
+      test: /\.ttf$/,
+      loader: require.resolve('file-loader'),
+      options: { esModule: false, name: 'static/media/[path][name].[ext]' },
+    },
+    {
       test: /\.(js|jsx)$/,
       exclude: function (content) {
         return (
@@ -46,7 +51,7 @@ module.exports = async ({ config, mode }) => {
         );
       },
       use: {
-        loader: 'babel-loader',
+        loader: require.resolve('@nrwl/web/src/utils/web-babel-loader.js'),
         options: {
           presets: [
             [
@@ -57,16 +62,7 @@ module.exports = async ({ config, mode }) => {
               },
             ],
           ],
-          plugins: [
-            [
-              '@babel/plugin-transform-runtime',
-              {
-                loose: true,
-              },
-            ],
-            ['@babel/plugin-proposal-class-properties', { loose: true }],
-            'react-native-web',
-          ],
+          plugins: ['react-native-web'],
         },
       },
     },

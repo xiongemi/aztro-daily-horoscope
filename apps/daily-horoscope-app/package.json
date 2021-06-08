@@ -22,6 +22,7 @@
     "react-redux": "*",
     "@reduxjs/toolkit": "*",
     "redux-observable": "*",
-    "redux-logger": "*"
+    "redux-logger": "*",
+    "react-native-style-tachyons": "*"
   }
 }

@@ -108,7 +108,7 @@
         "serve": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "nx start daily-horoscope"
+            "command": "nx start daily-horoscope-app"
           }
         },
         "run-ios": {

@@ -1,0 +1,40 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "config.js",
+  "apps": {
+    "ios": {
+      "type": "ios.app",
+      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Debug -sdk iphonesimulator -derivedDataPath ./build -quiet",
+      "binaryPath": "../daily-horoscope-app/ios/build/Build/Products/Debug-iphonesimulator/DailyHoroscope.app"
+    },
+    "android": {
+      "type": "android.apk",
+      "build": "cd ../daily-horoscope-app/android && ./gradlew assembleRelease assembleDebug assembleAndroidTest -DtestBuildType=release",
+      "binaryPath": "../daily-horoscope-app/android/app/build/outputs/apk/androidTest/debug/app-debug.apk"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 12"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_XL_API_30_2"
+      }
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios"
+    },
+    "android": {
+      "device": "emulator",
+      "app": "android"
+    }
+  }
+}

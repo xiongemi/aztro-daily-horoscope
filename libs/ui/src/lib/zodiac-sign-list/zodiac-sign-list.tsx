@@ -26,6 +26,7 @@ export function ZodiacSignList({ setUserZodiacSignItem }: ZodiacSignListProps) {
 
   return (
     <FlatList
+      testID="zodiac-sign-list"
       keyExtractor={keyExtractor}
       data={AdhZodiacSignList}
       renderItem={({ item }) => (

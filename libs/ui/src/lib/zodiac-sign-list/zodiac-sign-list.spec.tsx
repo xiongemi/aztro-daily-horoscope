@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ZodiacSignList from './zodiac-sign-list';
+import { ZodiacSignList } from './zodiac-sign-list';
 
 describe('ZodiacSignList', () => {
   it('should render successfully', () => {

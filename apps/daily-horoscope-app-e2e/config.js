@@ -1,7 +1,5 @@
-const workspacePreset = require('../../jest.preset');
-
 module.exports = {
-  ...workspacePreset,
+  preset: '../../jest.preset',
   testEnvironment: 'node',
   testRunner: 'jest-jasmine2',
   testTimeout: 120000,

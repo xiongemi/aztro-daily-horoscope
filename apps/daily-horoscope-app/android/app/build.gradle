@@ -135,6 +135,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        testBuildType System.getProperty('testBuildType', 'debug')  // This will later be used to control the test apk build type
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     splits {
         abi {
@@ -153,14 +155,14 @@ android {
         }
         // In production, you need to generate your own keystore file.
         // See: https://reactnative.dev/docs/signed-apk-android
-        // release {
-        //     if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
-        //         storeFile file(MYAPP_UPLOAD_STORE_FILE)
-        //         storePassword MYAPP_UPLOAD_STORE_PASSWORD
-        //         keyAlias MYAPP_UPLOAD_KEY_ALIAS
-        //         keyPassword MYAPP_UPLOAD_KEY_PASSWORD
-        //     }
-        // }
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
     }
     buildTypes {
         debug {
@@ -169,8 +171,8 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // See: https://reactnative.dev/docs/signed-apk-android
-            signingConfig signingConfigs.debug
-            // signingConfig signingConfigs.release
+            // signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
@@ -221,6 +223,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    // Added testing dependencies
+    androidTestImplementation('com.wix:detox:+')
 }
 
 // Run this once to be able to run the application with BUCK

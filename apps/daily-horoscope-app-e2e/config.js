@@ -11,5 +11,4 @@ module.exports = {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
-  coverageDirectory: '../../coverage/apps/react',
 };

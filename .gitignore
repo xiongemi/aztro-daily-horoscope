@@ -97,3 +97,5 @@ node_modules/
 ## Nested node_modules
 
 node_modules/
+
+apps/daily-horoscope-app-e2e/artifacts/

@@ -2,10 +2,15 @@
   "testRunner": "jest",
   "runnerConfig": "config.js",
   "apps": {
-    "ios": {
+    "ios.debug": {
       "type": "ios.app",
       "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Debug -sdk iphonesimulator -derivedDataPath ./build -quiet",
       "binaryPath": "../daily-horoscope-app/ios/build/Build/Products/Debug-iphonesimulator/DailyHoroscope.app"
+    },
+    "ios.release": {
+      "type": "ios.app",
+      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Release -sdk iphonesimulator -derivedDataPath ./build -quiet",
+      "binaryPath": "../daily-horoscope-app/ios/build/Build/Products/Release-iphonesimulator/DailyHoroscope.app"
     },
     "android.debug": {
       "type": "android.apk",
@@ -33,9 +38,13 @@
     }
   },
   "configurations": {
-    "ios": {
+    "ios.sim.release": {
       "device": "simulator",
-      "app": "ios"
+      "app": "ios.release"
+    },
+    "ios.sim.debug": {
+      "device": "simulator",
+      "app": "ios.debug"
     },
     "android.emu.release": {
       "device": "emulator",

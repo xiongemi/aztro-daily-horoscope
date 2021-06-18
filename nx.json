@@ -25,12 +25,6 @@
     }
   },
   "projects": {
-    "ui": {
-      "tags": []
-    },
-    "services": {
-      "tags": []
-    },
     "daily-horoscope-app": {
       "tags": []
     },
@@ -41,10 +35,16 @@
       "tags": [],
       "implicitDependencies": ["daily-horoscope-web"]
     },
+    "models": {
+      "tags": []
+    },
+    "services": {
+      "tags": []
+    },
     "store": {
       "tags": []
     },
-    "models": {
+    "ui": {
       "tags": []
     }
   }

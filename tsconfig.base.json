@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@aztro-daily-horoscope/ui": ["libs/ui/src/index.ts"],
+      "@aztro-daily-horoscope/models": ["libs/models/src/index.ts"],
       "@aztro-daily-horoscope/services": ["libs/services/src/index.ts"],
       "@aztro-daily-horoscope/store": ["libs/store/src/index.ts"],
-      "@aztro-daily-horoscope/models": ["libs/models/src/index.ts"]
+      "@aztro-daily-horoscope/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

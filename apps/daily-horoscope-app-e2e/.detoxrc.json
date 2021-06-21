@@ -1,11 +1,11 @@
 {
   "testRunner": "jest",
-  "runnerConfig": "config.js",
+  "runnerConfig": "apps/daily-horoscope-app-e2e/config.js",
   "apps": {
     "ios.debug": {
       "type": "ios.app",
-      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Debug -sdk iphonesimulator -derivedDataPath ./build -quiet",
-      "binaryPath": "../daily-horoscope-app/ios/build/Build/Products/Debug-iphonesimulator/DailyHoroscope.app"
+      "build": "cd apps/daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Debug -sdk iphonesimulator -derivedDataPath ./build -quiet",
+      "binaryPath": "apps/daily-horoscope-app-e2e/daily-horoscope-app/ios/build/Build/Products/Debug-iphonesimulator/DailyHoroscope.app"
     },
     "ios.release": {
       "type": "ios.app",

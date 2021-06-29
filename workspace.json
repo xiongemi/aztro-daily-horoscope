@@ -75,6 +75,10 @@
           "executor": "@nrwl/react-native:sync-deps",
           "options": {}
         },
+        "ensure-symlink": {
+          "executor": "@nrwl/react-native:ensure-symlink",
+          "options": {}
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {

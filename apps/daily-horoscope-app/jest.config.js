@@ -1,6 +1,4 @@
-const workspacePreset = require('../../jest.preset');
 module.exports = {
-  ...workspacePreset,
   displayName: 'daily-horoscope',
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
@@ -10,5 +8,8 @@ module.exports = {
     '^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$': require.resolve(
       'react-native/jest/assetFileTransformer.js'
     ),
+  },
+  moduleNameMapper: {
+    '\\.svg': require.resolve('@nrwl/react-native/src/utils/svg-mock.js'),
   },
 };

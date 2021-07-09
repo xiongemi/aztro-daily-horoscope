@@ -1,4 +1,4 @@
-import { device, element, by } from 'detox';
+import { device, element, by, expect } from 'detox';
 
 describe('zodiac-sign-list', () => {
   beforeEach(async () => {

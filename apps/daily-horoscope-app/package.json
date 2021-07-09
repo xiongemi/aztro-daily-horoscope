@@ -25,6 +25,7 @@
     "redux-logger": "*",
     "react-native-style-tachyons": "*",
     "detox": "*",
-    "@testing-library/jest-dom": "*"
+    "@testing-library/jest-dom": "*",
+    "react-native-svg": "*"
   }
 }

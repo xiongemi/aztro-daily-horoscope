@@ -28,6 +28,10 @@
     "daily-horoscope-app": {
       "tags": []
     },
+    "daily-horoscope-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["daily-horoscope-app"]
+    },
     "daily-horoscope-web": {
       "tags": []
     },
@@ -47,5 +51,13 @@
     "ui": {
       "tags": []
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "files": [],
+  "files": ["../../node_modules/@nrwl/react-native/typings/image.d.ts"],
   "include": [],
   "references": [
     {

@@ -1,15 +1,15 @@
 {
   "testRunner": "jest",
-  "runnerConfig": "config.js",
+  "runnerConfig": "jest.config.json",
   "apps": {
     "ios.debug": {
       "type": "ios.app",
-      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Debug -sdk iphonesimulator -derivedDataPath ./build -quiet",
+      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' -derivedDataPath ./build -quiet",
       "binaryPath": "../daily-horoscope-app/ios/build/Build/Products/Debug-iphonesimulator/DailyHoroscope.app"
     },
     "ios.release": {
       "type": "ios.app",
-      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Release -sdk iphonesimulator -derivedDataPath ./build -quiet",
+      "build": "cd ../daily-horoscope-app/ios && xcodebuild -workspace DailyHoroscope.xcworkspace -scheme DailyHoroscope -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' -derivedDataPath ./build -quiet",
       "binaryPath": "../daily-horoscope-app/ios/build/Build/Products/Release-iphonesimulator/DailyHoroscope.app"
     },
     "android.debug": {

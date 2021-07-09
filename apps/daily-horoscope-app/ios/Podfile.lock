@@ -339,7 +339,7 @@ PODS:
     - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNReanimated (2.2.0):
+  - RNReanimated (2.3.0-alpha.1):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -371,6 +371,8 @@ PODS:
   - RNScreens (3.4.0):
     - React-Core
     - React-RCTImage
+  - RNSVG (12.1.1):
+    - React
   - RNVectorIcons (8.1.0):
     - React-Core
   - Yoga (1.14.0)
@@ -433,6 +435,7 @@ DEPENDENCIES:
   - RNGestureHandler (from `../../../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../../../node_modules/react-native-reanimated`)
   - RNScreens (from `../../../node_modules/react-native-screens`)
+  - RNSVG (from `../../../node_modules/react-native-svg`)
   - RNVectorIcons (from `../../../node_modules/react-native-vector-icons`)
   - Yoga (from `../../../node_modules/react-native/ReactCommon/yoga`)
 
@@ -519,6 +522,8 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../../../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../../../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../../../node_modules/react-native-vector-icons"
   Yoga:
@@ -569,8 +574,9 @@ SPEC CHECKSUMS:
   ReactCommon: a7dd2a6d6f8667c26b4dcdca16d69a59d799047a
   RNCMaskedView: fc29d354a40316a990e8fb46391f08aea829c3aa
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNReanimated: 7245c2ff6dca3b42b6f77e800adf85ce68532759
+  RNReanimated: 62b429edccf04573fd5c5e8363fc2bfbfaade99a
   RNScreens: 21b73c94c9117e1110a79ee0ee80c93ccefed8ce
+  RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   Yoga: 52a3397158f0a5a0d49c51fb94ced9eee3ce5c73
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

@@ -9,7 +9,4 @@ module.exports = {
       'react-native/jest/assetFileTransformer.js'
     ),
   },
-  moduleNameMapper: {
-    '\\.svg': require.resolve('@nrwl/react-native/src/utils/svg-mock.js'),
-  },
 };

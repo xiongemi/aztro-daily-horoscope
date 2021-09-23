@@ -9,10 +9,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import App from './App.tsx';
 
 it('renders correctly', () => {
-  const { getByTestId } = render(
-    <NavigationContainer>
-      <App />
-    </NavigationContainer>
-  );
-  expect(getByTestId('heading')).toHaveTextContent('Welcome');
+  const { getByTestId } = render(<App />);
+  expect(getByTestId('zodiac-sign-list')).toBeTruthy();
 });

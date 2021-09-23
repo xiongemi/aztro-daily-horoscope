@@ -5,7 +5,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   transformIgnorePatterns: [
-    'node_modules/(?!(@react-native|react-native|react-native-elements|react-native-size-matters|react-native-vector-icons|@react-navigation)/)',
+    'node_modules/(?!(jest-)?@?react-native|react-native-elements|react-native-size-matters|react-native-vector-icons|@react-navigation)',
   ],
   transform: {
     '\\.(js|ts|tsx)$': require.resolve('react-native/jest/preprocessor.js'),

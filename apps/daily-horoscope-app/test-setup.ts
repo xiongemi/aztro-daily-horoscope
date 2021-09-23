@@ -9,11 +9,6 @@ jest.mock('react-native-reanimated', () => {
   return Reanimated;
 });
 
-jest.mock("@react-navigation/native", () => {
-  return {
-    useNavigation: () => ({
-      navigate: jest.fn(),
-      dispatch: jest.fn(),
-    }),
-  };
-});
+jest.mock('../../node_modules/react-native/Libraries/Animated/NativeAnimatedHelper');
+
+jest.useFakeTimers();

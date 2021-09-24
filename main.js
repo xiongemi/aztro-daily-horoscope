@@ -236,7 +236,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 async function getHoroscope(zodiacSign, day) {
-  console.log(Object({"NODE_ENV":"development","NX_INVOKED_BY_RUNNER":"true","NX_WORKSPACE_ROOT":"/Users/emilyxiong/Code/tmp/aztro-daily-horoscope","NX_TERMINAL_OUTPUT_PATH":"/Users/emilyxiong/Code/tmp/aztro-daily-horoscope/node_modules/.cache/nx/terminalOutputs/6cec83cbbe6bbdf7c4ec61b1701f32c378eea9c62dcc97a9559785aaed843dce","NX_FORWARD_OUTPUT":"true","NX_AZTRO_URL":"https://aztro.sameerkumar.website","NX_TASK_TARGET_PROJECT":"daily-horoscope-web","NX_TASK_HASH":"6cec83cbbe6bbdf7c4ec61b1701f32c378eea9c62dcc97a9559785aaed843dce","NX_CLI_SET":"true"}));
+  console.log(Object({"NODE_ENV":"development","NX_INVOKED_BY_RUNNER":"true","NX_WORKSPACE_ROOT":"/Users/emilyxiong/Code/tmp/aztro-daily-horoscope","NX_TERMINAL_OUTPUT_PATH":"/Users/emilyxiong/Code/tmp/aztro-daily-horoscope/node_modules/.cache/nx/terminalOutputs/550aeceaab4981195e68e071233995b1e474cf07a4f5dfd5f8a56de292e09f94","NX_FORWARD_OUTPUT":"true","NX_AZTRO_URL":"https://aztro.sameerkumar.website","NX_TASK_TARGET_PROJECT":"daily-horoscope-web","NX_TASK_HASH":"550aeceaab4981195e68e071233995b1e474cf07a4f5dfd5f8a56de292e09f94","NX_CLI_SET":"true"}));
   const response = await fetch(`https://aztro.sameerkumar.website/?sign=${zodiacSign.toLowerCase()}&day=${day}`, {
     method: 'POST'
   });

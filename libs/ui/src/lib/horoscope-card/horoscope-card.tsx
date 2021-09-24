@@ -40,7 +40,7 @@ export function HoroscopeCard({
           </Text>
           {loadingStatus === LoadingStatus.Success && horoscope ? (
             <>
-              <Text style={[styles.mt4, styles.f4]}>
+              <Text style={[styles.mt2, styles.f4]}>
                 {horoscope.description}
               </Text>
               <Text style={[styles.mt2]}>Mood: {horoscope.mood}</Text>

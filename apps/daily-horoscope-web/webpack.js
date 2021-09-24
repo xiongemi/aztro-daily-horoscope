@@ -19,10 +19,11 @@ function getCustomWebpackConfig(webpackConfig) {
         test: /\.(js|jsx)$/,
         exclude: function (content) {
           return (
-            /node_modules/.test(content) &&
-            !/\/react-native-elements\//.test(content) &&
-            !/\/react-native-vector-icons\//.test(content) &&
-            !/\/react-native-ratings\//.test(content)
+            (/node_modules/.test(content) &&
+              !/\/react-native-elements\//.test(content) &&
+              !/\/react-native-vector-icons\//.test(content) &&
+              !/\/react-native-ratings\//.test(content)) ||
+            /\/deepmerge\//.test(content)
           );
         },
         use: {

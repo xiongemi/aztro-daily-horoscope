@@ -6,6 +6,7 @@ async function getHoroscope(
   zodiacSign: AdhZodiacSign,
   day: AdhHoroscopeDay
 ): Promise<AztroHoroscpeResponse> {
+  console.log(process.env);
   const response: Response = await fetch(
     `https://aztro.sameerkumar.website/?sign=${zodiacSign.toLowerCase()}&day=${day}`,
     {

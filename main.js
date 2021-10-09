@@ -206,6 +206,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfromAztroHoroscpeResponseToAdhHoroscope", function() { return transfromAztroHoroscpeResponseToAdhHoroscope; });
 /* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "../../../node_modules/core-js/modules/es.symbol.description.js");
 /* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.parse-int.js */ "../../../node_modules/core-js/modules/es.parse-int.js");
+/* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1__);
+
 
 function transfromAztroHoroscpeResponseToAdhHoroscope(responose) {
   return {
@@ -236,7 +239,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 async function getHoroscope(zodiacSign, day) {
-  console.log(Object({"NODE_ENV":"development","NX_INVOKED_BY_RUNNER":"true","NX_WORKSPACE_ROOT":"/Users/emilyxiong/Code/tmp/aztro-daily-horoscope","NX_TERMINAL_OUTPUT_PATH":"/Users/emilyxiong/Code/tmp/aztro-daily-horoscope/node_modules/.cache/nx/terminalOutputs/550aeceaab4981195e68e071233995b1e474cf07a4f5dfd5f8a56de292e09f94","NX_FORWARD_OUTPUT":"true","NX_AZTRO_URL":"https://aztro.sameerkumar.website","NX_TASK_TARGET_PROJECT":"daily-horoscope-web","NX_TASK_HASH":"550aeceaab4981195e68e071233995b1e474cf07a4f5dfd5f8a56de292e09f94","NX_CLI_SET":"true"}));
   const response = await fetch(`https://aztro.sameerkumar.website/?sign=${zodiacSign.toLowerCase()}&day=${day}`, {
     method: 'POST'
   });
@@ -258,24 +260,30 @@ const aztroService = {
 /*!********************************************************************************!*\
   !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/index.ts ***!
   \********************************************************************************/
-/*! exports provided: LoadingStatus, rootStore, horoscopeSlice, horoscopeSelectors */
+/*! exports provided: rootStore, HOROSCOPE_FEATURE_KEY, fetchHoroscope, initialHoroscopeState, horoscopeSlice, horoscopeReducer, horoscopeActions, horoscopeSelectors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lib_models_loading_status_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/models/loading-status.enum */ "../../../libs/store/src/lib/models/loading-status.enum.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadingStatus", function() { return _lib_models_loading_status_enum__WEBPACK_IMPORTED_MODULE_0__["LoadingStatus"]; });
-
-/* harmony import */ var _lib_root_root_state_interface__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/root/root-state.interface */ "../../../libs/store/src/lib/root/root-state.interface.ts");
+/* harmony import */ var _lib_models_loading_status_type__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/models/loading-status.type */ "../../../libs/store/src/lib/models/loading-status.type.ts");
+/* empty/unused harmony star reexport *//* harmony import */ var _lib_root_root_state_interface__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/root/root-state.interface */ "../../../libs/store/src/lib/root/root-state.interface.ts");
 /* empty/unused harmony star reexport *//* harmony import */ var _lib_root_root_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/root/root.store */ "../../../libs/store/src/lib/root/root.store.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rootStore", function() { return _lib_root_root_store__WEBPACK_IMPORTED_MODULE_2__["rootStore"]; });
 
 /* harmony import */ var _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/horoscope/horoscope.slice */ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HOROSCOPE_FEATURE_KEY", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["HOROSCOPE_FEATURE_KEY"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fetchHoroscope", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["fetchHoroscope"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "initialHoroscopeState", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["initialHoroscopeState"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "horoscopeSlice", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["horoscopeSlice"]; });
 
-/* harmony import */ var _lib_horoscope_horoscope_selectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/horoscope/horoscope.selectors */ "../../../libs/store/src/lib/horoscope/horoscope.selectors.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "horoscopeSelectors", function() { return _lib_horoscope_horoscope_selectors__WEBPACK_IMPORTED_MODULE_4__["horoscopeSelectors"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "horoscopeReducer", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["horoscopeReducer"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "horoscopeActions", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["horoscopeActions"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "horoscopeSelectors", function() { return _lib_horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_3__["horoscopeSelectors"]; });
 
 
 
@@ -284,113 +292,82 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "../../../libs/store/src/lib/error/error.slice.ts":
-/*!************************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/error/error.slice.ts ***!
-  \************************************************************************************************/
-/*! exports provided: errorSlice */
+/***/ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts":
+/*!********************************************************************************************************!*\
+  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/horoscope/horoscope.slice.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: HOROSCOPE_FEATURE_KEY, fetchHoroscope, initialHoroscopeState, horoscopeSlice, horoscopeReducer, horoscopeActions, horoscopeSelectors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "errorSlice", function() { return errorSlice; });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "../../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOROSCOPE_FEATURE_KEY", function() { return HOROSCOPE_FEATURE_KEY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchHoroscope", function() { return fetchHoroscope; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialHoroscopeState", function() { return initialHoroscopeState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeSlice", function() { return horoscopeSlice; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeReducer", function() { return horoscopeReducer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeActions", function() { return horoscopeActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeSelectors", function() { return horoscopeSelectors; });
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "../../../node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.assign.js */ "../../../node_modules/core-js/modules/es.object.assign.js");
+/* harmony import */ var core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _aztro_daily_horoscope_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @aztro-daily-horoscope/services */ "../../../libs/services/src/index.ts");
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @reduxjs/toolkit */ "../../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 
-const errorSlice = Object(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__["createSlice"])({
-  name: 'error',
-  initialState: null,
-  reducers: {
-    handleError(_, action) {
-      return action.payload;
-    },
 
-    clearError() {
-      return null;
-    }
 
+
+const HOROSCOPE_FEATURE_KEY = 'horoscope';
+const fetchHoroscope = Object(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__["createAsyncThunk"])('horoscope/fetchStatus', async ({
+  zodiacSign,
+  day
+}, {
+  rejectWithValue
+}) => {
+  try {
+    const horoscopeResponse = await _aztro_daily_horoscope_services__WEBPACK_IMPORTED_MODULE_2__["aztroService"].getHoroscope(zodiacSign, day);
+    return Object(_aztro_daily_horoscope_services__WEBPACK_IMPORTED_MODULE_2__["transfromAztroHoroscpeResponseToAdhHoroscope"])(horoscopeResponse);
+  } catch (error) {
+    return rejectWithValue({
+      error
+    });
   }
 });
-
-/***/ }),
-
-/***/ "../../../libs/store/src/lib/horoscope/horoscope-state.initial.ts":
-/*!****************************************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/horoscope/horoscope-state.initial.ts ***!
-  \****************************************************************************************************************/
-/*! exports provided: initialHoroscopeState */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialHoroscopeState", function() { return initialHoroscopeState; });
-/* harmony import */ var _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/loading-status.enum */ "../../../libs/store/src/lib/models/loading-status.enum.ts");
-
 const initialHoroscopeState = {
-  loadingStatus: _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_0__["LoadingStatus"].Initial
+  loadingStatus: 'not loaded'
 };
+const horoscopeSlice = Object(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__["createSlice"])({
+  name: HOROSCOPE_FEATURE_KEY,
+  initialState: initialHoroscopeState,
+  reducers: {
+    setUserZodiacSignItem(state, action) {
+      state.zodiacSignItem = action.payload;
+    }
 
-/***/ }),
+  },
+  extraReducers: builder => {
+    builder.addCase(fetchHoroscope.pending, state => {
+      state.loadingStatus = 'loading';
+    }).addCase(fetchHoroscope.fulfilled, (state, action) => {
+      state.horoscope = action.payload;
+      state.loadingStatus = 'loaded';
+    }).addCase(fetchHoroscope.rejected, (state, action) => {
+      state.loadingStatus = 'error';
+      state.error = action.error.message;
+    });
+  }
+});
+/*
+ * Export reducer for store configuration.
+ */
 
-/***/ "../../../libs/store/src/lib/horoscope/horoscope.epics.ts":
-/*!********************************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/horoscope/horoscope.epics.ts ***!
-  \********************************************************************************************************/
-/*! exports provided: getUserHoroscopeEpic, horoscopeEpics */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+const horoscopeReducer = horoscopeSlice.reducer;
+const horoscopeActions = Object.assign({
+  fetchHoroscope
+}, horoscopeSlice.actions);
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserHoroscopeEpic", function() { return getUserHoroscopeEpic; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeEpics", function() { return horoscopeEpics; });
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "../../../node_modules/core-js/modules/es.array.iterator.js");
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "../../../node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _aztro_daily_horoscope_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @aztro-daily-horoscope/services */ "../../../libs/services/src/index.ts");
-/* harmony import */ var redux_observable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux-observable */ "../../../node_modules/redux-observable/lib/esm/index.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "../../../node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "../../../node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _error_error_slice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../error/error.slice */ "../../../libs/store/src/lib/error/error.slice.ts");
-/* harmony import */ var _horoscope_horoscope_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../horoscope/horoscope.selectors */ "../../../libs/store/src/lib/horoscope/horoscope.selectors.ts");
-/* harmony import */ var _horoscope_slice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./horoscope.slice */ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts");
-
-
-
-
-
-
-
-
-
-const getUserHoroscopeEpic = (action$, state$) => action$.pipe( // listens to action getUserHoroscope
-Object(redux_observable__WEBPACK_IMPORTED_MODULE_3__["ofType"])(_horoscope_slice__WEBPACK_IMPORTED_MODULE_8__["horoscopeSlice"].actions.getUserHoroscope.type), // get user's current zodiac sign
-Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["withLatestFrom"])(state$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(_horoscope_horoscope_selectors__WEBPACK_IMPORTED_MODULE_7__["horoscopeSelectors"].getUserZodiac))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(([action, zodiacSign]) => {
-  if (!zodiacSign) {
-    return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(_horoscope_slice__WEBPACK_IMPORTED_MODULE_8__["horoscopeSlice"].actions.getUserHoroscopeError());
-  } // call aztroService service to get user's horoscope from API
-
-
-  return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["from"])(_aztro_daily_horoscope_services__WEBPACK_IMPORTED_MODULE_2__["aztroService"].getHoroscope(zodiacSign, action.payload)).pipe( // map response model to app model
-  Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(_aztro_daily_horoscope_services__WEBPACK_IMPORTED_MODULE_2__["transfromAztroHoroscpeResponseToAdhHoroscope"]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(horoscope => // map to success action
-  _horoscope_slice__WEBPACK_IMPORTED_MODULE_8__["horoscopeSlice"].actions.gerUserHoroscopeSuccess(horoscope)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(error => Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["from"])([_error_error_slice__WEBPACK_IMPORTED_MODULE_6__["errorSlice"].actions.handleError(error), // handle error
-  _horoscope_slice__WEBPACK_IMPORTED_MODULE_8__["horoscopeSlice"].actions.getUserHoroscopeError() // map to error action
-  ])));
-}));
-const horoscopeEpics = [getUserHoroscopeEpic];
-
-/***/ }),
-
-/***/ "../../../libs/store/src/lib/horoscope/horoscope.selectors.ts":
-/*!************************************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/horoscope/horoscope.selectors.ts ***!
-  \************************************************************************************************************/
-/*! exports provided: horoscopeSelectors */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeSelectors", function() { return horoscopeSelectors; });
-const getHoroscopeState = rootState => rootState.horoscope;
+const getHoroscopeState = rootState => rootState[HOROSCOPE_FEATURE_KEY];
 
 const getUserZodiacItem = rootState => getHoroscopeState(rootState).zodiacSignItem;
 
@@ -413,68 +390,16 @@ const horoscopeSelectors = {
 
 /***/ }),
 
-/***/ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts":
-/*!********************************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/horoscope/horoscope.slice.ts ***!
-  \********************************************************************************************************/
-/*! exports provided: horoscopeSlice */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horoscopeSlice", function() { return horoscopeSlice; });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "../../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-/* harmony import */ var _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/loading-status.enum */ "../../../libs/store/src/lib/models/loading-status.enum.ts");
-/* harmony import */ var _horoscope_state_initial__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./horoscope-state.initial */ "../../../libs/store/src/lib/horoscope/horoscope-state.initial.ts");
-
-
-
-const horoscopeSlice = Object(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__["createSlice"])({
-  name: 'horoscope',
-  initialState: _horoscope_state_initial__WEBPACK_IMPORTED_MODULE_2__["initialHoroscopeState"],
-  reducers: {
-    setUserZodiacSignItem(state, action) {
-      state.zodiacSignItem = action.payload;
-    },
-
-    getUserHoroscope(state, action) {
-      state.day = action.payload;
-      state.loadingStatus = _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_1__["LoadingStatus"].Loading;
-      state.horoscope = undefined;
-    },
-
-    gerUserHoroscopeSuccess(state, action) {
-      state.loadingStatus = _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_1__["LoadingStatus"].Success;
-      state.horoscope = action.payload;
-    },
-
-    getUserHoroscopeError(state) {
-      state.loadingStatus = _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_1__["LoadingStatus"].Error;
-    }
-
-  }
-});
-
-/***/ }),
-
-/***/ "../../../libs/store/src/lib/models/loading-status.enum.ts":
+/***/ "../../../libs/store/src/lib/models/loading-status.type.ts":
 /*!*********************************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/models/loading-status.enum.ts ***!
+  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/models/loading-status.type.ts ***!
   \*********************************************************************************************************/
-/*! exports provided: LoadingStatus */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingStatus", function() { return LoadingStatus; });
-let LoadingStatus;
 
-(function (LoadingStatus) {
-  LoadingStatus[LoadingStatus["Initial"] = 0] = "Initial";
-  LoadingStatus[LoadingStatus["Loading"] = 1] = "Loading";
-  LoadingStatus[LoadingStatus["Success"] = 2] = "Success";
-  LoadingStatus[LoadingStatus["Error"] = 3] = "Error";
-})(LoadingStatus || (LoadingStatus = {}));
 
 /***/ }),
 
@@ -488,13 +413,10 @@ let LoadingStatus;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialRootState", function() { return initialRootState; });
-/* harmony import */ var _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/loading-status.enum */ "../../../libs/store/src/lib/models/loading-status.enum.ts");
+/* harmony import */ var _horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../horoscope/horoscope.slice */ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts");
 
 const initialRootState = {
-  error: null,
-  horoscope: {
-    loadingStatus: _models_loading_status_enum__WEBPACK_IMPORTED_MODULE_0__["LoadingStatus"].Initial
-  }
+  horoscope: _horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_0__["initialHoroscopeState"]
 };
 
 /***/ }),
@@ -512,30 +434,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "../../../libs/store/src/lib/root/root.epics.ts":
-/*!**********************************************************************************************!*\
-  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/root/root.epics.ts ***!
-  \**********************************************************************************************/
-/*! exports provided: rootEpics */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rootEpics", function() { return rootEpics; });
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "../../../node_modules/core-js/modules/es.array.iterator.js");
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "../../../node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var redux_observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-observable */ "../../../node_modules/redux-observable/lib/esm/index.js");
-/* harmony import */ var _horoscope_horoscope_epics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../horoscope/horoscope.epics */ "../../../libs/store/src/lib/horoscope/horoscope.epics.ts");
-
-
-
-
-const rootEpics = Object(redux_observable__WEBPACK_IMPORTED_MODULE_2__["combineEpics"])(..._horoscope_horoscope_epics__WEBPACK_IMPORTED_MODULE_3__["horoscopeEpics"]);
-
-/***/ }),
-
 /***/ "../../../libs/store/src/lib/root/root.reducer.ts":
 /*!************************************************************************************************!*\
   !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/store/src/lib/root/root.reducer.ts ***!
@@ -547,14 +445,11 @@ const rootEpics = Object(redux_observable__WEBPACK_IMPORTED_MODULE_2__["combineE
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rootReducer", function() { return rootReducer; });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "../../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-/* harmony import */ var _error_error_slice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../error/error.slice */ "../../../libs/store/src/lib/error/error.slice.ts");
-/* harmony import */ var _horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../horoscope/horoscope.slice */ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts");
-
+/* harmony import */ var _horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../horoscope/horoscope.slice */ "../../../libs/store/src/lib/horoscope/horoscope.slice.ts");
 
 
 const rootReducer = Object(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  error: _error_error_slice__WEBPACK_IMPORTED_MODULE_1__["errorSlice"].reducer,
-  horoscope: _horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_2__["horoscopeSlice"].reducer
+  horoscope: _horoscope_horoscope_slice__WEBPACK_IMPORTED_MODULE_1__["horoscopeSlice"].reducer
 });
 
 /***/ }),
@@ -572,25 +467,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "../../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-logger */ "../../../node_modules/redux-logger/dist/redux-logger.js");
 /* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var redux_observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-observable */ "../../../node_modules/redux-observable/lib/esm/index.js");
-/* harmony import */ var _root_state_initial__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./root-state.initial */ "../../../libs/store/src/lib/root/root-state.initial.ts");
-/* harmony import */ var _root_epics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./root.epics */ "../../../libs/store/src/lib/root/root.epics.ts");
-/* harmony import */ var _root_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./root.reducer */ "../../../libs/store/src/lib/root/root.reducer.ts");
+/* harmony import */ var _root_state_initial__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./root-state.initial */ "../../../libs/store/src/lib/root/root-state.initial.ts");
+/* harmony import */ var _root_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./root.reducer */ "../../../libs/store/src/lib/root/root.reducer.ts");
 
 
 
 
-
-
-const epicMiddleware = Object(redux_observable__WEBPACK_IMPORTED_MODULE_2__["createEpicMiddleware"])();
 const isDevelopment = "development" === 'development';
 const rootStore = Object(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__["configureStore"])({
-  reducer: _root_reducer__WEBPACK_IMPORTED_MODULE_5__["rootReducer"],
-  middleware: isDevelopment ? [epicMiddleware, redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a] : [epicMiddleware],
+  reducer: _root_reducer__WEBPACK_IMPORTED_MODULE_3__["rootReducer"],
+  middleware: getDefaultMiddleware => isDevelopment ? getDefaultMiddleware().concat(redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a) : getDefaultMiddleware(),
   devTools: isDevelopment,
-  preloadedState: _root_state_initial__WEBPACK_IMPORTED_MODULE_3__["initialRootState"]
+  preloadedState: _root_state_initial__WEBPACK_IMPORTED_MODULE_2__["initialRootState"]
 });
-epicMiddleware.run(_root_epics__WEBPACK_IMPORTED_MODULE_4__["rootEpics"]);
 
 
 /***/ }),
@@ -643,8 +532,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getUserHoroscope(day) {
-      dispatch(_aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__["horoscopeSlice"].actions.getUserHoroscope(day));
+    getUserHoroscope(zodiacSign, day) {
+      dispatch(_aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__["horoscopeActions"].fetchHoroscope({
+        zodiacSign,
+        day
+      }));
     }
 
   };
@@ -665,25 +557,23 @@ const mapDispatchToProps = dispatch => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HoroscopeCard", function() { return HoroscopeCard; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HoroscopeCardContainer", function() { return HoroscopeCardContainer; });
-/* harmony import */ var _aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @aztro-daily-horoscope/store */ "../../../libs/store/src/index.ts");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../../../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-native-web/dist/cjs/exports/ActivityIndicator */ "../../../node_modules/react-native-web/dist/cjs/exports/ActivityIndicator/index.js");
-/* harmony import */ var react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-native-web/dist/cjs/exports/SafeAreaView */ "../../../node_modules/react-native-web/dist/cjs/exports/SafeAreaView/index.js");
-/* harmony import */ var react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-native-web/dist/cjs/exports/ScrollView */ "../../../node_modules/react-native-web/dist/cjs/exports/ScrollView/index.js");
-/* harmony import */ var react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_native_elements__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-native-elements */ "../../../node_modules/react-native-elements/dist/index.js");
-/* harmony import */ var react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-native-style-tachyons */ "../../../node_modules/react-native-style-tachyons/lib/index.js");
-/* harmony import */ var react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_native_vector_icons_MaterialCommunityIcons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-native-vector-icons/MaterialCommunityIcons */ "../../../node_modules/react-native-vector-icons/MaterialCommunityIcons.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "../../../node_modules/react-redux/es/index.js");
-/* harmony import */ var _horoscope_card_props__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./horoscope-card.props */ "../../../libs/ui/src/lib/horoscope-card/horoscope-card.props.ts");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-dev-runtime */ "../../../node_modules/react/jsx-dev-runtime.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../../../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-native-web/dist/cjs/exports/ActivityIndicator */ "../../../node_modules/react-native-web/dist/cjs/exports/ActivityIndicator/index.js");
+/* harmony import */ var react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-native-web/dist/cjs/exports/SafeAreaView */ "../../../node_modules/react-native-web/dist/cjs/exports/SafeAreaView/index.js");
+/* harmony import */ var react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-native-web/dist/cjs/exports/ScrollView */ "../../../node_modules/react-native-web/dist/cjs/exports/ScrollView/index.js");
+/* harmony import */ var react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_native_elements__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-native-elements */ "../../../node_modules/react-native-elements/dist/index.js");
+/* harmony import */ var react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-native-style-tachyons */ "../../../node_modules/react-native-style-tachyons/lib/index.js");
+/* harmony import */ var react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_native_vector_icons_MaterialCommunityIcons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-native-vector-icons/MaterialCommunityIcons */ "../../../node_modules/react-native-vector-icons/MaterialCommunityIcons.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "../../../node_modules/react-redux/es/index.js");
+/* harmony import */ var _horoscope_card_props__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./horoscope-card.props */ "../../../libs/ui/src/lib/horoscope-card/horoscope-card.props.ts");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-dev-runtime */ "../../../node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "/Users/emilyxiong/Code/tmp/aztro-daily-horoscope/libs/ui/src/lib/horoscope-card/horoscope-card.tsx";
-
 
 
 
@@ -701,120 +591,122 @@ function HoroscopeCard({
   loadingStatus,
   getUserHoroscope
 }) {
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    getUserHoroscope('today');
-  }, [getUserHoroscope]);
-  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Card"], {
-        children: [zodiacItem && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["Fragment"], {
-          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Card"].Title, {
-            children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_vector_icons_MaterialCommunityIcons__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (zodiacItem != null && zodiacItem.zodiacSign) {
+      getUserHoroscope(zodiacItem.zodiacSign, 'today');
+    }
+  }, [zodiacItem, getUserHoroscope]);
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_web_dist_cjs_exports_SafeAreaView__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_web_dist_cjs_exports_ScrollView__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Card"], {
+        children: [zodiacItem && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["Fragment"], {
+          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Card"].Title, {
+            children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_vector_icons_MaterialCommunityIcons__WEBPACK_IMPORTED_MODULE_6__["default"], {
               name: zodiacItem == null ? void 0 : zodiacItem.icon,
               size: 40
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 32,
+              lineNumber: 34,
               columnNumber: 17
             }, this)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 31,
+            lineNumber: 33,
             columnNumber: 15
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Card"].Title, {
+          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Card"].Title, {
             children: zodiacItem == null ? void 0 : zodiacItem.zodiacSign
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 34,
+            lineNumber: 36,
             columnNumber: 15
           }, this)]
-        }, void 0, true), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Card"].Divider, {}, void 0, false, {
+        }, void 0, true), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Card"].Divider, {}, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 37,
+          lineNumber: 39,
           columnNumber: 11
-        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
+        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
           h4: true,
-          style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].w100, react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].tc],
+          style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].w100, react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].tc],
           children: "Your Horoscope for Today"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 40,
           columnNumber: 11
-        }, this), loadingStatus === _aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__["LoadingStatus"].Success && horoscope ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["Fragment"], {
-          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
-            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].mt2, react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].f4],
+        }, this), loadingStatus === 'loaded' && horoscope ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["Fragment"], {
+          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
+            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].mt2, react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].f4],
             children: horoscope.description
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 43,
+            lineNumber: 45,
             columnNumber: 15
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
-            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].mt2],
+          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
+            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].mt2],
             children: ["Mood: ", horoscope.mood]
-          }, void 0, true, {
-            fileName: _jsxFileName,
-            lineNumber: 46,
-            columnNumber: 15
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
-            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].mt2],
-            children: ["Color: ", horoscope.color]
-          }, void 0, true, {
-            fileName: _jsxFileName,
-            lineNumber: 47,
-            columnNumber: 15
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
-            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].mt2],
-            children: ["Compatibility: ", horoscope.compatibility]
           }, void 0, true, {
             fileName: _jsxFileName,
             lineNumber: 48,
             columnNumber: 15
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
-            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].mt2],
+          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
+            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].mt2],
+            children: ["Color: ", horoscope.color]
+          }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 15
+          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
+            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].mt2],
+            children: ["Compatibility: ", horoscope.compatibility]
+          }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 50,
+            columnNumber: 15
+          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
+            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].mt2],
             children: ["Lucky Number: ", horoscope.luckyNumber]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 51,
+            lineNumber: 53,
             columnNumber: 15
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
-            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_6__["styles"].mt2],
+          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
+            style: [react_native_style_tachyons__WEBPACK_IMPORTED_MODULE_5__["styles"].mt2],
             children: ["Lucky Time: ", horoscope.luckyTime]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 54,
+            lineNumber: 56,
             columnNumber: 15
           }, this)]
-        }, void 0, true) : loadingStatus === _aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__["LoadingStatus"].Error ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_5__["Text"], {
+        }, void 0, true) : loadingStatus === 'error' ? /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_elements__WEBPACK_IMPORTED_MODULE_4__["Text"], {
           h2: true,
           children: "Oops! Something went wrong. Please try agian."
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 61,
           columnNumber: 13
-        }, this) : /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__["jsxDEV"])(react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        }, this) : /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_native_web_dist_cjs_exports_ActivityIndicator__WEBPACK_IMPORTED_MODULE_1___default.a, {
           size: "large"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 61,
+          lineNumber: 63,
           columnNumber: 13
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 30,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 29,
       columnNumber: 7
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 26,
+    lineNumber: 28,
     columnNumber: 5
   }, this);
 }
-const HoroscopeCardContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_8__["connect"])(_horoscope_card_props__WEBPACK_IMPORTED_MODULE_9__["mapStateToProps"], _horoscope_card_props__WEBPACK_IMPORTED_MODULE_9__["mapDispatchToProps"])(HoroscopeCard);
+const HoroscopeCardContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(_horoscope_card_props__WEBPACK_IMPORTED_MODULE_8__["mapStateToProps"], _horoscope_card_props__WEBPACK_IMPORTED_MODULE_8__["mapDispatchToProps"])(HoroscopeCard);
 
 /***/ }),
 
@@ -834,7 +726,7 @@ __webpack_require__.r(__webpack_exports__);
 const mapDispatchToProps = dispatch => {
   return {
     setUserZodiacSignItem(zodiacSignItem) {
-      dispatch(_aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__["horoscopeSlice"].actions.setUserZodiacSignItem(zodiacSignItem));
+      dispatch(_aztro_daily_horoscope_store__WEBPACK_IMPORTED_MODULE_0__["horoscopeActions"].setUserZodiacSignItem(zodiacSignItem));
     }
 
   };
@@ -3016,6 +2908,31 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "../../../node_modules/core-js/internals/number-parse-int.js":
+/*!***********************************************************************************************************!*\
+  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/node_modules/core-js/internals/number-parse-int.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "../../../node_modules/core-js/internals/global.js");
+var trim = __webpack_require__(/*! ../internals/string-trim */ "../../../node_modules/core-js/internals/string-trim.js").trim;
+var whitespaces = __webpack_require__(/*! ../internals/whitespaces */ "../../../node_modules/core-js/internals/whitespaces.js");
+
+var $parseInt = global.parseInt;
+var hex = /^[+-]?0[Xx]/;
+var FORCED = $parseInt(whitespaces + '08') !== 8 || $parseInt(whitespaces + '0x16') !== 22;
+
+// `parseInt` method
+// https://tc39.es/ecma262/#sec-parseint-string-radix
+module.exports = FORCED ? function parseInt(string, radix) {
+  var S = trim(String(string));
+  return $parseInt(S, (radix >>> 0) || (hex.test(S) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+
 /***/ "../../../node_modules/core-js/internals/object-assign.js":
 /*!********************************************************************************************************!*\
   !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/node_modules/core-js/internals/object-assign.js ***!
@@ -4691,6 +4608,25 @@ var assign = __webpack_require__(/*! ../internals/object-assign */ "../../../nod
 // eslint-disable-next-line es/no-object-assign -- required for testing
 $({ target: 'Object', stat: true, forced: Object.assign !== assign }, {
   assign: assign
+});
+
+
+/***/ }),
+
+/***/ "../../../node_modules/core-js/modules/es.parse-int.js":
+/*!*****************************************************************************************************!*\
+  !*** /Users/emilyxiong/Code/tmp/aztro-daily-horoscope/node_modules/core-js/modules/es.parse-int.js ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "../../../node_modules/core-js/internals/export.js");
+var parseIntImplementation = __webpack_require__(/*! ../internals/number-parse-int */ "../../../node_modules/core-js/internals/number-parse-int.js");
+
+// `parseInt` method
+// https://tc39.es/ecma262/#sec-parseint-string-radix
+$({ global: true, forced: parseInt != parseIntImplementation }, {
+  parseInt: parseIntImplementation
 });
 
 

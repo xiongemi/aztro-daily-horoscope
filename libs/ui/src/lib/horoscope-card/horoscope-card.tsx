@@ -19,8 +19,10 @@ export function HoroscopeCard({
   getUserHoroscope,
 }: HoroscopeCardProps) {
   useEffect(() => {
-    getUserHoroscope('today');
-  }, [getUserHoroscope]);
+    if (zodiacItem?.zodiacSign) {
+      getUserHoroscope(zodiacItem.zodiacSign, 'today');
+    }
+  }, [zodiacItem, getUserHoroscope]);
 
   return (
     <SafeAreaView>
@@ -38,7 +40,7 @@ export function HoroscopeCard({
           <Text h4 style={[styles.w100, styles.tc]}>
             Your Horoscope for Today
           </Text>
-          {loadingStatus === LoadingStatus.Success && horoscope ? (
+          {loadingStatus === 'loaded' && horoscope ? (
             <>
               <Text style={[styles.mt2, styles.f4]}>
                 {horoscope.description}
@@ -55,7 +57,7 @@ export function HoroscopeCard({
                 Lucky Time: {horoscope.luckyTime}
               </Text>
             </>
-          ) : loadingStatus === LoadingStatus.Error ? (
+          ) : loadingStatus === 'error' ? (
             <Text h2>Oops! Something went wrong. Please try agian.</Text>
           ) : (
             <ActivityIndicator size="large" />

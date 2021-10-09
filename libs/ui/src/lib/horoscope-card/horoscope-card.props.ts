@@ -1,10 +1,13 @@
-import { AdhHoroscopeDay } from '@aztro-daily-horoscope/models';
 import {
+  AdhHoroscopeDay,
+  AdhZodiacSign,
+} from '@aztro-daily-horoscope/models';
+import {
+  horoscopeActions,
   horoscopeSelectors,
-  horoscopeSlice,
   RootState,
 } from '@aztro-daily-horoscope/store';
-import { Dispatch } from '@reduxjs/toolkit';
+import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -14,10 +17,10 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, void, AnyAction>) => {
   return {
-    getUserHoroscope(day: AdhHoroscopeDay) {
-      dispatch(horoscopeSlice.actions.getUserHoroscope(day));
+    getUserHoroscope(zodiacSign: AdhZodiacSign, day: AdhHoroscopeDay) {
+      dispatch(horoscopeActions.fetchHoroscope({zodiacSign, day}));
     },
   };
 };

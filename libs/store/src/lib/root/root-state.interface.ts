@@ -1,6 +1,5 @@
-import { HoroscopeState } from '../horoscope/horoscope-state.interface';
+import { HoroscopeState } from '../horoscope/horoscope.slice';
 
 export interface RootState {
-  error: Error | string | null;
   horoscope: HoroscopeState;
 }

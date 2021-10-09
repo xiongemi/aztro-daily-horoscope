@@ -1,10 +1,7 @@
-import { LoadingStatus } from '../models/loading-status.enum';
+import { initialHoroscopeState } from '../horoscope/horoscope.slice';
 
 import { RootState } from './root-state.interface';
 
 export const initialRootState: RootState = {
-  error: null,
-  horoscope: {
-    loadingStatus: LoadingStatus.Initial,
-  },
+  horoscope: initialHoroscopeState
 };

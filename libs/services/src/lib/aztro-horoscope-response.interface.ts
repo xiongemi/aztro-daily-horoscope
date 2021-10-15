@@ -15,7 +15,7 @@ export function transfromAztroHoroscpeResponseToAdhHoroscope(
   responose: AztroHoroscpeResponse
 ): AdhHoroscope {
   return {
-    currentDate: new Date(responose.current_date),
+    currentDate: responose.current_date,
     description: responose.description,
     compatibility: responose.compatibility as AdhZodiacSign,
     mood: responose.mood,

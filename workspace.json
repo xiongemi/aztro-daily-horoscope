@@ -1,25 +1,5 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/react-native"
-  },
-  "defaultProject": "daily-horoscope-app",
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "style": "none",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "none"
-      },
-      "library": {
-        "style": "none",
-        "linter": "eslint"
-      }
-    }
-  },
   "projects": {
     "daily-horoscope-app": {
       "root": "apps/daily-horoscope-app",
@@ -96,7 +76,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "daily-horoscope-app-e2e": {
       "root": "apps/daily-horoscope-app-e2e",
@@ -156,7 +137,9 @@
           },
           "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["daily-horoscope-app"]
     },
     "daily-horoscope-web": {
       "root": "apps/daily-horoscope-web",
@@ -233,7 +216,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "daily-horoscope-web-e2e": {
       "root": "apps/daily-horoscope-web-e2e",
@@ -260,7 +244,9 @@
           },
           "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["daily-horoscope-web"]
     },
     "models": {
       "root": "libs/models",
@@ -282,7 +268,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "services": {
       "root": "libs/services",
@@ -304,7 +291,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "store": {
       "root": "libs/store",
@@ -326,7 +314,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui": {
       "root": "libs/ui",
@@ -379,7 +368,8 @@
             }
           }
         }
-      }
+      },
+      "tags": []
     }
   }
 }

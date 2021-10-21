@@ -24,34 +24,6 @@
       }
     }
   },
-  "projects": {
-    "daily-horoscope-app": {
-      "tags": []
-    },
-    "daily-horoscope-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["daily-horoscope-app"]
-    },
-    "daily-horoscope-web": {
-      "tags": []
-    },
-    "daily-horoscope-web-e2e": {
-      "tags": [],
-      "implicitDependencies": ["daily-horoscope-web"]
-    },
-    "models": {
-      "tags": []
-    },
-    "services": {
-      "tags": []
-    },
-    "store": {
-      "tags": []
-    },
-    "ui": {
-      "tags": []
-    }
-  },
   "targetDependencies": {
     "build": [
       {
@@ -59,5 +31,25 @@
         "projects": "dependencies"
       }
     ]
-  }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react-native"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "none",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "none"
+      },
+      "library": {
+        "style": "none",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "daily-horoscope-app"
 }

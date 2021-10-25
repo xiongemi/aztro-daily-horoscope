@@ -1,7 +1,7 @@
 import { AdhZodiacSign } from './zodiac-sign.enum';
 
 export interface AdhHoroscope {
-  currentDate: Date;
+  currentDate: string;
   description: string;
   compatibility: AdhZodiacSign;
   mood: string;

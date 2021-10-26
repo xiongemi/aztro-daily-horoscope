@@ -33,14 +33,12 @@ export function ZodiacSignList({ setUserZodiacSignItem }: ZodiacSignListProps) {
         <ListItem
           bottomDivider
           onPress={() => zodiacListItemPress(item)}
-          hasTVPreferredFocus={false}
-          tvParallaxProperties
         >
           <Icon name={item.icon} />
           <ListItem.Content>
             <ListItem.Title>{item.zodiacSign}</ListItem.Title>
           </ListItem.Content>
-          <ListItem.Chevron tvParallaxProperties />
+          <ListItem.Chevron />
         </ListItem>
       )}
     />

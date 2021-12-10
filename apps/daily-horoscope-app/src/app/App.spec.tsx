@@ -2,11 +2,9 @@ import 'react-native';
 import { render } from '@testing-library/react-native';
 import React from 'react';
 
-// Avoid conflict with app.json
-// @ts-ignore
-import App from './App.tsx';
+import App from './App';
 
 it('renders correctly', () => {
-  const { getByTestId } = render(<App />);
-  expect(getByTestId('zodiac-sign-list')).toBeTruthy();
+  const { queryByText } = render(<App />);
+  expect(queryByText('Zodiac Sign List')).toBeTruthy();
 });

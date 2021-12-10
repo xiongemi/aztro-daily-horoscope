@@ -28,7 +28,7 @@
           "options": {
             "entryFile": "apps/daily-horoscope-app/src/main.tsx",
             "platform": "ios",
-            "bundleOutput": "dist/apps/daily-horoscope-app/ios/main.bundle"
+            "bundleOutput": "dist/apps/daily-horoscope-app/ios/main.jsbundle"
           }
         },
         "run-android": {
@@ -48,7 +48,7 @@
           "options": {
             "entryFile": "apps/daily-horoscope-app/src/main.tsx",
             "platform": "android",
-            "bundleOutput": "dist/apps/daily-horoscope-app/android/main.bundle"
+            "bundleOutput": "dist/apps/daily-horoscope-app/android/main.jsbundle"
           }
         },
         "sync-deps": {

@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Provider store={rootStore}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Zodiac Sign List">
           <Stack.Screen
             name="Zodiac Sign List"
             component={ZodiacSignListContainer}

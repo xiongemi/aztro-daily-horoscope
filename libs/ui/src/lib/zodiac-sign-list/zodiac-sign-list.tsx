@@ -30,10 +30,7 @@ export function ZodiacSignList({ setUserZodiacSignItem }: ZodiacSignListProps) {
       keyExtractor={keyExtractor}
       data={AdhZodiacSignList}
       renderItem={({ item }) => (
-        <ListItem
-          bottomDivider
-          onPress={() => zodiacListItemPress(item)}
-        >
+        <ListItem bottomDivider onPress={() => zodiacListItemPress(item)}>
           <Icon name={item.icon} />
           <ListItem.Content>
             <ListItem.Title>{item.zodiacSign}</ListItem.Title>

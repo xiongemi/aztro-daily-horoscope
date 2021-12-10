@@ -1,26 +1,10 @@
-import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import 'react-native';
+import { render } from '@testing-library/react-native';
+import React from 'react';
 
-import App from './app';
+import App from './App';
 
-describe('App', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
-
-    expect(baseElement).toBeTruthy();
-  });
-
-  it('should have a greeting as the title', () => {
-    const { getByText } = render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
-
-    expect(getByText('Welcome to daily-horoscope-web!')).toBeTruthy();
-  });
+it('renders correctly', () => {
+  const { queryByText } = render(<App />);
+  expect(queryByText('Zodiac Sign List')).toBeTruthy();
 });

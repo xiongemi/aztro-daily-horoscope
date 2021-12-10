@@ -1,10 +1,20 @@
 module.exports = {
   displayName: 'daily-horoscope-web',
-  preset: '../../jest.preset.js',
-  transform: {
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
-    '^.+\\.[tj]sx?$': 'babel-jest',
+  preset: 'react-native',
+  testRunner: 'jest-jasmine2',
+  resolver: '@nrwl/jest/plugins/resolver',
+  moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?@?react-native|react-native-elements|react-native-size-matters|react-native-vector-icons|@react-navigation)',
+  ],
+  moduleNameMapper: {
+    '.svg': '@nrwl/react-native/plugins/jest/svg-mock',
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/daily-horoscope-web',
+  transform: {
+    '\\.(js|ts|tsx)$': require.resolve('react-native/jest/preprocessor.js'),
+    '^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp|ttf)$': require.resolve(
+      'react-native/jest/assetFileTransformer.js'
+    ),
+  },
 };

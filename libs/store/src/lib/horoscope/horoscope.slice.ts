@@ -8,11 +8,7 @@ import {
   aztroService,
   transfromAztroHoroscpeResponseToAdhHoroscope,
 } from '@aztro-daily-horoscope/services';
-import {
-  createAsyncThunk,
-  createSlice,
-  PayloadAction,
-} from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { LoadingStatus } from '../models/loading-status.type';
 import { RootState } from '../root/root-state.interface';
@@ -28,7 +24,7 @@ export interface HoroscopeState {
 
 export const fetchHoroscope = createAsyncThunk<
   AdhHoroscope,
-  { zodiacSign: AdhZodiacSign, day: AdhHoroscopeDay }
+  { zodiacSign: AdhZodiacSign; day: AdhHoroscopeDay }
 >('horoscope/fetchStatus', async ({ zodiacSign, day }, { rejectWithValue }) => {
   try {
     const horoscopeResponse = await aztroService.getHoroscope(zodiacSign, day);
@@ -39,7 +35,7 @@ export const fetchHoroscope = createAsyncThunk<
 });
 
 export const initialHoroscopeState: HoroscopeState = {
-  loadingStatus: 'not loaded'
+  loadingStatus: 'not loaded',
 };
 
 export const horoscopeSlice = createSlice({
@@ -76,7 +72,7 @@ export const horoscopeSlice = createSlice({
  * Export reducer for store configuration.
  */
 export const horoscopeReducer = horoscopeSlice.reducer;
-export const horoscopeActions = { fetchHoroscope, ...horoscopeSlice.actions};
+export const horoscopeActions = { fetchHoroscope, ...horoscopeSlice.actions };
 
 const getHoroscopeState = (rootState: RootState): HoroscopeState =>
   rootState[HOROSCOPE_FEATURE_KEY];
@@ -85,9 +81,8 @@ const getUserZodiacItem = (
   rootState: RootState
 ): AdhZodiacSignItem | undefined => getHoroscopeState(rootState).zodiacSignItem;
 
-const getUserZodiac = (
-  rootState: RootState
-): AdhZodiacSign | undefined => getUserZodiacItem(rootState)?.zodiacSign;
+const getUserZodiac = (rootState: RootState): AdhZodiacSign | undefined =>
+  getUserZodiacItem(rootState)?.zodiacSign;
 
 const getUserHoroscope = (rootState: RootState): AdhHoroscope | undefined =>
   getHoroscopeState(rootState).horoscope;
@@ -95,4 +90,9 @@ const getUserHoroscope = (rootState: RootState): AdhHoroscope | undefined =>
 const getHoroscopeLoadingStatus = (rootState: RootState): LoadingStatus =>
   getHoroscopeState(rootState).loadingStatus;
 
-export const horoscopeSelectors = { getUserZodiacItem, getUserZodiac, getUserHoroscope, getHoroscopeLoadingStatus };
+export const horoscopeSelectors = {
+  getUserZodiacItem,
+  getUserZodiac,
+  getUserHoroscope,
+  getHoroscopeLoadingStatus,
+};

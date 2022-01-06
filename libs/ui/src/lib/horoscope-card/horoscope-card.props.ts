@@ -1,7 +1,4 @@
-import {
-  AdhHoroscopeDay,
-  AdhZodiacSign,
-} from '@aztro-daily-horoscope/models';
+import { AdhHoroscopeDay, AdhZodiacSign } from '@aztro-daily-horoscope/models';
 import {
   horoscopeActions,
   horoscopeSelectors,
@@ -17,10 +14,12 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, void, AnyAction>) => {
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<RootState, void, AnyAction>
+) => {
   return {
     getUserHoroscope(zodiacSign: AdhZodiacSign, day: AdhHoroscopeDay) {
-      dispatch(horoscopeActions.fetchHoroscope({zodiacSign, day}));
+      dispatch(horoscopeActions.fetchHoroscope({ zodiacSign, day }));
     },
   };
 };

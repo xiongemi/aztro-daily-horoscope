@@ -1,6 +1,6 @@
 module.exports = {
   displayName: 'daily-horoscope-web',
-  preset: 'react-native',
+  preset: 'react-native-web',
   testRunner: 'jest-jasmine2',
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],

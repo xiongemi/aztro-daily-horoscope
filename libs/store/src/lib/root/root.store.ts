@@ -10,7 +10,10 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 const rootStore = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => isDevelopment ? getDefaultMiddleware().concat(logger) : getDefaultMiddleware(),
+  middleware: (getDefaultMiddleware) =>
+    isDevelopment
+      ? getDefaultMiddleware().concat(logger)
+      : getDefaultMiddleware(),
   devTools: isDevelopment,
   preloadedState: initialRootState,
 });

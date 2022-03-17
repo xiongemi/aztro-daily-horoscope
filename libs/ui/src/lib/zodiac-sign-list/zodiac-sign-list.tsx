@@ -1,6 +1,7 @@
 import {
   AdhZodiacSignItem,
   AdhZodiacSignList,
+  AppRoutes,
 } from '@aztro-daily-horoscope/models';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
@@ -20,7 +21,7 @@ export function ZodiacSignList({ setUserZodiacSignItem }: ZodiacSignListProps) {
   const keyExtractor = (item: AdhZodiacSignItem) => item.zodiacSign;
 
   const zodiacListItemPress = (item: AdhZodiacSignItem) => {
-    navigation.navigate('Horoscope Card');
+    navigation.navigate(AppRoutes.card);
     setUserZodiacSignItem(item);
   };
 

@@ -24,7 +24,9 @@
         },
         "bundle-ios": {
           "executor": "@nrwl/react-native:bundle",
-          "outputs": ["apps/daily-horoscope-app/build"],
+          "outputs": [
+            "apps/daily-horoscope-app/build"
+          ],
           "options": {
             "entryFile": "apps/daily-horoscope-app/src/main.tsx",
             "platform": "ios",
@@ -66,11 +68,15 @@
               "apps/daily-horoscope-app/**/*.{ts,tsx,js,jsx}"
             ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/daily-horoscope-app"],
+          "outputs": [
+            "coverage/apps/daily-horoscope-app"
+          ],
           "options": {
             "jestConfig": "apps/daily-horoscope-app/jest.config.js",
             "passWithNoTests": true
@@ -98,11 +104,13 @@
         "test-ios": {
           "executor": "@nrwl/detox:test",
           "options": {
-            "detoxConfiguration": "ios.sim.debug"
+            "detoxConfiguration": "ios.sim.debug",
+            "buildTarget": "daily-horoscope-app-e2e:build-ios"
           },
           "configurations": {
             "production": {
-              "detoxConfiguration": "ios.sim.release"
+              "detoxConfiguration": "ios.sim.release",
+              "buildTarget": "daily-horoscope-app-e2e:build-ios:prod"
             }
           }
         },
@@ -120,11 +128,13 @@
         "test-android": {
           "executor": "@nrwl/detox:test",
           "options": {
-            "detoxConfiguration": "android.emu.debug"
+            "detoxConfiguration": "android.emu.debug",
+            "buildTarget": "daily-horoscope-app-e2e:build-android"
           },
           "configurations": {
             "production": {
-              "detoxConfiguration": "android.emu.release"
+              "detoxConfiguration": "android.emu.release",
+              "buildTarget": "daily-horoscope-app-e2e:build-android:prod"
             }
           }
         },
@@ -135,11 +145,15 @@
               "apps/daily-horoscope-app-e2e/**/*.{ts,tsx,js,jsx}"
             ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
       },
       "tags": [],
-      "implicitDependencies": ["daily-horoscope-app"]
+      "implicitDependencies": [
+        "daily-horoscope-app"
+      ]
     },
     "daily-horoscope-web": {
       "root": "apps/daily-horoscope-web",
@@ -148,7 +162,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:webpack",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/daily-horoscope-web",
             "index": "apps/daily-horoscope-web/src/index.html",
@@ -206,11 +222,15 @@
               "apps/daily-horoscope-web/**/*.{ts,tsx,js,jsx}"
             ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/daily-horoscope-web"],
+          "outputs": [
+            "coverage/apps/daily-horoscope-web"
+          ],
           "options": {
             "jestConfig": "apps/daily-horoscope-web/jest.config.js",
             "passWithNoTests": true
@@ -240,13 +260,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/daily-horoscope-web-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/daily-horoscope-web-e2e/**/*.{js,ts}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
       },
       "tags": [],
-      "implicitDependencies": ["daily-horoscope-web"]
+      "implicitDependencies": [
+        "daily-horoscope-web"
+      ]
     },
     "models": {
       "root": "libs/models",
@@ -256,13 +282,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/models/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/models/**/*.ts"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/models"],
+          "outputs": [
+            "coverage/libs/models"
+          ],
           "options": {
             "jestConfig": "libs/models/jest.config.js",
             "passWithNoTests": true
@@ -279,13 +311,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/services/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/services/**/*.{ts,tsx,js,jsx}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/services"],
+          "outputs": [
+            "coverage/libs/services"
+          ],
           "options": {
             "jestConfig": "libs/services/jest.config.js",
             "passWithNoTests": true
@@ -302,13 +340,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/store/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/store/**/*.{ts,tsx,js,jsx}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/store"],
+          "outputs": [
+            "coverage/libs/store"
+          ],
           "options": {
             "jestConfig": "libs/store/jest.config.js",
             "passWithNoTests": true
@@ -325,13 +369,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/ui/**/*.{ts,tsx,js,jsx}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui"],
+          "outputs": [
+            "coverage/libs/ui"
+          ],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
@@ -354,7 +404,9 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/ui",

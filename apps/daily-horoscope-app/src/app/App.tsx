@@ -1,3 +1,4 @@
+import { AppRoutes,RootStackParamList } from '@aztro-daily-horoscope/models';
 import { rootStore } from '@aztro-daily-horoscope/store';
 import {
   ZodiacSignListContainer,
@@ -8,19 +9,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <Provider store={rootStore}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Zodiac Sign List">
+        <Stack.Navigator initialRouteName={AppRoutes.list}>
           <Stack.Screen
-            name="Zodiac Sign List"
+            name={AppRoutes.list}
             component={ZodiacSignListContainer}
           />
           <Stack.Screen
-            name="Horoscope Card"
+            name={AppRoutes.card}
             component={HoroscopeCardContainer}
           />
         </Stack.Navigator>

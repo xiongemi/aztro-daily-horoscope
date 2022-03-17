@@ -17,15 +17,8 @@ function getCustomWebpackConfig(webpackConfig) {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: function (content) {
-          return (
-            (/node_modules/.test(content) &&
-              !/\/react-native-elements\//.test(content) &&
-              !/\/react-native-vector-icons\//.test(content) &&
-              !/\/react-native-ratings\//.test(content)) ||
-            /\/deepmerge\//.test(content)
-          );
-        },
+        exclude:
+          /node_modules[/\\](?!react-native-elements|react-native-vector-icons|react-native-safe-area-context)/,
         use: {
           loader: require.resolve('@nrwl/web/src/utils/web-babel-loader.js'),
           options: {
@@ -38,7 +31,6 @@ function getCustomWebpackConfig(webpackConfig) {
                 },
               ],
             ],
-            plugins: ['react-native-web'],
           },
         },
       }

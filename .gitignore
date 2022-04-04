@@ -41,7 +41,6 @@ Thumbs.db
 # React Native
 
 ## Xcode
-
 **/ios/**/build/
 **/ios/**/*.pbxuser
 !default.pbxuser
@@ -60,14 +59,12 @@ DerivedData
 *.xcuserstate
 
 ## Android
-
 **/android/**/build/
 **/android/**/.gradle
 **/android/**/local.properties
 **/android/**/*.iml
 
 ## BUCK
-
 buck-out/
 \.buckd/
 *.keystore
@@ -89,13 +86,8 @@ buck-out/
 
 ## CocoaPods
 **/ios/Pods/
-/
 
 ## Nested node_modules
-
-node_modules/
-## Nested node_modules
-
 node_modules/
 
 apps/daily-horoscope-app-e2e/artifacts/

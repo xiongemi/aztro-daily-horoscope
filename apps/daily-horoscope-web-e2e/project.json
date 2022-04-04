@@ -1,0 +1,29 @@
+{
+  "root": "apps/daily-horoscope-web-e2e",
+  "sourceRoot": "apps/daily-horoscope-web-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/daily-horoscope-web-e2e/cypress.json",
+        "tsConfig": "apps/daily-horoscope-web-e2e/tsconfig.e2e.json",
+        "devServerTarget": "daily-horoscope-web:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "daily-horoscope-web:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/daily-horoscope-web-e2e/**/*.{js,ts}"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["daily-horoscope-web"]
+}

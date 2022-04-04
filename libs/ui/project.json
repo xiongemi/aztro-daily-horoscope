@@ -1,0 +1,48 @@
+{
+  "root": "libs/ui",
+  "sourceRoot": "libs/ui/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui"],
+      "options": {
+        "jestConfig": "libs/ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/react-native:storybook",
+      "options": {
+        "searchDir": "libs/ui",
+        "outputFile": "./.storybook/story-loader.js",
+        "pattern": "**/*.stories.@(js|jsx|ts|tsx|md)",
+        "silent": false
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/ui",
+        "config": {
+          "configFolder": "libs/ui/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

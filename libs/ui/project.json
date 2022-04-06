@@ -26,22 +26,6 @@
         "pattern": "**/*.stories.@(js|jsx|ts|tsx|md)",
         "silent": false
       }
-    },
-    "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/ui",
-        "config": {
-          "configFolder": "libs/ui/.storybook"
-        }
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
     }
   },
   "tags": []

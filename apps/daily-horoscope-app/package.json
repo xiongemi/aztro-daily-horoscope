@@ -25,6 +25,7 @@
     "react-native-style-tachyons": "*",
     "detox": "*",
     "@testing-library/jest-dom": "*",
-    "react-native-svg": "*"
+    "react-native-svg": "*",
+    "@storybook/react-native": "*"
   }
 }

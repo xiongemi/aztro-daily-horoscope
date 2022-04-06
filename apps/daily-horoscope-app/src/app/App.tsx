@@ -1,4 +1,4 @@
-import { AppRoutes,RootStackParamList } from '@aztro-daily-horoscope/models';
+import { AppRoutes, RootStackParamList } from '@aztro-daily-horoscope/models';
 import { rootStore } from '@aztro-daily-horoscope/store';
 import {
   ZodiacSignListContainer,

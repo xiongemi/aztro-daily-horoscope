@@ -1,4 +1,3 @@
-import { LoadingStatus } from '@aztro-daily-horoscope/store';
 import React, { useEffect } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView } from 'react-native';
 import { Card, Text } from 'react-native-elements';

@@ -1,6 +1,11 @@
 import { Card, Text } from '@rneui/base';
 import React, { useEffect } from 'react';
-import { ActivityIndicator, SafeAreaView, ScrollView, View } from 'react-native';
+import {
+  ActivityIndicator,
+  SafeAreaView,
+  ScrollView,
+  View,
+} from 'react-native';
 import { styles } from 'react-native-style-tachyons';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';

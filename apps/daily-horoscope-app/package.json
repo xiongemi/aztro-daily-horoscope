@@ -11,7 +11,6 @@
     "@testing-library/react-native": "*",
     "react": "*",
     "react-native": "*",
-    "react-native-elements": "*",
     "react-native-gesture-handler": "*",
     "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
@@ -26,6 +25,7 @@
     "detox": "*",
     "@testing-library/jest-dom": "*",
     "react-native-svg": "*",
-    "@storybook/react-native": "*"
+    "@storybook/react-native": "*",
+    "@rneui/base": "*"
   }
 }

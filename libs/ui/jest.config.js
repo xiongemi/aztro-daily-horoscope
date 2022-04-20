@@ -6,7 +6,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   transformIgnorePatterns: [
-    'node_modules/(?!(@react-native|react-native|react-native-elements|react-native-size-matters|react-native-vector-icons|@react-navigation)/)',
+    'node_modules/(?!(@react-native|react-native|@rneui|react-native-size-matters|react-native-vector-icons|@react-navigation)/)',
   ],
   moduleNameMapper: {
     '.svg': '@nrwl/react-native/plugins/jest/svg-mock',

@@ -6,7 +6,7 @@ function getCustomWebpackConfig(webpackConfig) {
 
   if (!isProduction) {
     config.resolve.alias = {
-      'react-native': 'react-native-web',
+      'react-native$': 'react-native-web',
     };
 
     config.module.rules.push(
@@ -17,8 +17,14 @@ function getCustomWebpackConfig(webpackConfig) {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude:
-          /node_modules[/\\](?!react-native-elements|react-native-vector-icons|react-native-safe-area-context)/,
+        exclude: function (content) {
+          return (
+            /node_modules/.test(content) &&
+            !/\/@rneui\//.test(content) &&
+            !/\/react-native-vector-icons\//.test(content) &&
+            !/\/react-native-ratings\//.test(content)
+          );
+        },
         use: {
           loader: require.resolve('@nrwl/web/src/utils/web-babel-loader.js'),
           options: {

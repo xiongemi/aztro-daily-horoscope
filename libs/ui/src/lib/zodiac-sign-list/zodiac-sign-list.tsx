@@ -6,7 +6,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { FlatList } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { ListItem } from '@rneui/base';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 

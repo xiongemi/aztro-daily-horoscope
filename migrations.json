@@ -1,84 +1,28 @@
 {
   "migrations": [
     {
-      "version": "13.6.0-beta.0",
-      "description": "Remove old options that are no longer used",
-      "cli": "nx",
-      "implementation": "./src/migrations/update-13-6-0/remove-old-task-runner-options",
-      "package": "@nrwl/workspace",
-      "name": "13-6-0-remove-old-task-runner-options"
-    },
-    {
-      "version": "13.9.0-beta.0",
+      "version": "13.10.0-beta.0",
       "description": "Update the decorate-angular-cli script to require nx instead of @nrwl/cli",
       "cli": "nx",
-      "implementation": "./src/migrations/update-13-9-0/update-decorate-cli",
+      "implementation": "./src/migrations/update-13-10-0/update-decorate-cli",
       "package": "@nrwl/workspace",
-      "name": "13-9-0-update-decorate-cli"
+      "name": "13-10-0-update-decorate-cli"
     },
     {
-      "version": "13.9.0-beta.0",
-      "description": "Replace @nrwl/tao with nx",
+      "version": "13.10.0-beta.0",
+      "description": "Update the tasks runner property to import it from the nx package instead of @nrwl/worksapce",
       "cli": "nx",
-      "implementation": "./src/migrations/update-13-9-0/replace-tao-with-nx",
+      "implementation": "./src/migrations/update-13-10-0/update-tasks-runner",
       "package": "@nrwl/workspace",
-      "name": "13-9-0-replace-tao-with-nx"
-    },
-    {
-      "version": "13.4.4-beta.0",
-      "cli": "nx",
-      "description": "Create a root babel config file if it doesn't exist and using babel-jest in jest.config.js and add @nrwl/web as needed",
-      "factory": "./src/migrations/update-13-4-4/add-missing-root-babel-config",
-      "package": "@nrwl/jest",
-      "name": "add-missing-root-babel-config"
-    },
-    {
-      "version": "13.4.6-beta.1",
-      "cli": "nx",
-      "description": "Add projectBuildConfig option to project's Storybook config.",
-      "factory": "./src/migrations/update-13-4-6/set-project-build-config",
-      "package": "@nrwl/storybook",
-      "name": "update-13.4.6"
+      "name": "13-10-0-update-tasks-runner"
     },
     {
       "cli": "nx",
-      "version": "13.8.0-beta.1",
-      "description": "Add a postcss config option to apps to load a single config file for all libs",
-      "factory": "./src/migrations/update-13-8-0/add-postcss-config-option",
-      "package": "@nrwl/web",
-      "name": "add-postcss-config-option"
-    },
-    {
-      "version": "13.5.0-beta.0",
-      "cli": "nx",
-      "description": "Update typing for svg in react native",
-      "factory": "./src/migrations/update-13-5-0/update-react-native-typing-svg-13-5-0",
-      "package": "@nrwl/react-native",
-      "name": "update-react-native-typing-svg-13-5-0"
-    },
-    {
-      "version": "13.5.0-beta.0",
-      "cli": "nx",
-      "description": "Add babel.config.json at root for react native workspace if it does not exist",
-      "factory": "./src/migrations/update-13-5-0/add-babel-config-root-13-5-0",
-      "package": "@nrwl/react-native",
-      "name": "add-babel-config-root-13-5-0"
-    },
-    {
-      "version": "13.5.0-beta.0",
-      "cli": "nx",
-      "description": "add buildTarget to test-ios and test-android for detox app",
-      "factory": "./src/migrations/update-13-5-0/add-build-target-test-13-5-0",
-      "package": "@nrwl/detox",
-      "name": "add-build-target-test-13-5-0"
-    },
-    {
-      "version": "13.8.2-beta.0",
-      "cli": "nx",
-      "description": "remove deprecated @types/detox from package.json",
-      "factory": "./src/migrations/update-13-8-2/remove-types-detox-13-8-2",
-      "package": "@nrwl/detox",
-      "name": "remove-types-detox-13-8-2"
+      "version": "13.10.0-beta.0",
+      "description": "Update to React 18",
+      "factory": "./src/migrations/update-13-10-0/update-13-10-0",
+      "package": "@nrwl/react",
+      "name": "update-react-18-13.10.0"
     }
   ]
 }

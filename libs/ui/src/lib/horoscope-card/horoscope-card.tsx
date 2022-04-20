@@ -1,6 +1,6 @@
+import { Card, Text } from '@rneui/base';
 import React, { useEffect } from 'react';
-import { ActivityIndicator, SafeAreaView, ScrollView } from 'react-native';
-import { Card, Text } from 'react-native-elements';
+import { ActivityIndicator, SafeAreaView, ScrollView, View } from 'react-native';
 import { styles } from 'react-native-style-tachyons';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
@@ -26,7 +26,7 @@ export function HoroscopeCard({
   return (
     <SafeAreaView>
       <ScrollView>
-        <Card>
+        <View>
           {zodiacItem && (
             <>
               <Card.Title>
@@ -61,7 +61,7 @@ export function HoroscopeCard({
           ) : (
             <ActivityIndicator size="large" />
           )}
-        </Card>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

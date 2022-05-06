@@ -6,4 +6,4 @@ import App from './app/App';
 
 NativeTachyons.build({}, StyleSheet);
 
-AppRegistry.registerComponent('main', () => App);
+AppRegistry.registerComponent('DailyHoroscopeApp', () => App);

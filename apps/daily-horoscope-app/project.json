@@ -23,7 +23,7 @@
       "executor": "@nrwl/react-native:bundle",
       "outputs": ["apps/daily-horoscope-app/build"],
       "options": {
-        "entryFile": "apps/daily-horoscope-app/src/main.tsx",
+        "entryFile": "src/main.tsx",
         "platform": "ios",
         "bundleOutput": "dist/apps/daily-horoscope-app/ios/main.jsbundle"
       }
@@ -43,7 +43,7 @@
     "bundle-android": {
       "executor": "@nrwl/react-native:bundle",
       "options": {
-        "entryFile": "apps/daily-horoscope-app/src/main.tsx",
+        "entryFile": "src/main.tsx",
         "platform": "android",
         "bundleOutput": "dist/apps/daily-horoscope-app/android/main.jsbundle"
       }
@@ -67,7 +67,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/daily-horoscope-app"],
       "options": {
-        "jestConfig": "apps/daily-horoscope-app/jest.config.js",
+        "jestConfig": "apps/daily-horoscope-app/jest.config.ts",
         "passWithNoTests": true
       }
     }

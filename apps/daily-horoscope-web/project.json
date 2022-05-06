@@ -42,8 +42,15 @@
               "maximumError": "1mb"
             }
           ]
+        },
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
         }
-      }
+      },
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@nrwl/web:dev-server",
@@ -53,8 +60,12 @@
       "configurations": {
         "production": {
           "buildTarget": "daily-horoscope-web:build:production"
+        },
+        "development": {
+          "buildTarget": "daily-horoscope-web:build:development"
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -67,7 +78,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/daily-horoscope-web"],
       "options": {
-        "jestConfig": "apps/daily-horoscope-web/jest.config.js",
+        "jestConfig": "apps/daily-horoscope-web/jest.config.ts",
         "passWithNoTests": true
       }
     }

@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'daily-horoscope-web',
   preset: 'react-native-web',
   testRunner: 'jest-jasmine2',

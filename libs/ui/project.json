@@ -1,5 +1,5 @@
 {
-  "root": "libs/ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ui/src",
   "projectType": "library",
   "targets": {
@@ -12,7 +12,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ui"],
+      "outputs": ["{workspaceRoot}/coverage/libs/ui"],
       "options": {
         "jestConfig": "libs/ui/jest.config.ts",
         "passWithNoTests": true
@@ -21,7 +21,7 @@
     "storybook": {
       "executor": "@nrwl/react-native:storybook",
       "options": {
-        "searchDir": "libs/ui",
+        "searchDir": ["libs/ui"],
         "outputFile": "./.storybook/story-loader.js",
         "pattern": "**/*.stories.@(js|jsx|ts|tsx|md)",
         "silent": false

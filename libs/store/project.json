@@ -1,5 +1,5 @@
 {
-  "root": "libs/store",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/store/src",
   "projectType": "library",
   "targets": {
@@ -12,7 +12,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/store"],
+      "outputs": ["{workspaceRoot}/coverage/libs/store"],
       "options": {
         "jestConfig": "libs/store/jest.config.ts",
         "passWithNoTests": true

@@ -1,5 +1,5 @@
 {
-  "root": "apps/daily-horoscope-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/daily-horoscope-app/src",
   "projectType": "application",
   "targets": {
@@ -10,7 +10,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "nx start daily-horoscope-app"
       }
@@ -21,7 +21,7 @@
     },
     "bundle-ios": {
       "executor": "@nrwl/react-native:bundle",
-      "outputs": ["apps/daily-horoscope-app/build"],
+      "outputs": ["{projectRoot}/build"],
       "options": {
         "entryFile": "src/main.tsx",
         "platform": "ios",
@@ -35,8 +35,8 @@
     "build-android": {
       "executor": "@nrwl/react-native:build-android",
       "outputs": [
-        "apps/daily-horoscope-app/android/app/build/outputs/bundle",
-        "apps/daily-horoscope-app/android/app/build/outputs/apk"
+        "{projectRoot}/android/app/build/outputs/bundle",
+        "{projectRoot}/android/app/build/outputs/apk"
       ],
       "options": {}
     },
@@ -65,7 +65,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/daily-horoscope-app"],
+      "outputs": ["{workspaceRoot}/coverage/apps/daily-horoscope-app"],
       "options": {
         "jestConfig": "apps/daily-horoscope-app/jest.config.ts",
         "passWithNoTests": true

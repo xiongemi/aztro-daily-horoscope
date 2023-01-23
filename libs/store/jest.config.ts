@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'models',
 
   globals: {
@@ -11,5 +12,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/models',
-  preset: '../../jest.preset.ts',
+  preset: '../../jest.preset.js',
 };

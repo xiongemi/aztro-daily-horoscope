@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   projects: [
     '<rootDir>/apps/daily-horoscope-app',
     '<rootDir>/libs/ui',

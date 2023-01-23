@@ -1,10 +1,10 @@
 {
-  "root": "apps/daily-horoscope-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/daily-horoscope-web/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/daily-horoscope-web",
@@ -53,7 +53,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/webpack:dev-server",
       "options": {
         "buildTarget": "daily-horoscope-web:build"
       },
@@ -76,7 +76,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/daily-horoscope-web"],
+      "outputs": ["{workspaceRoot}/coverage/apps/daily-horoscope-web"],
       "options": {
         "jestConfig": "apps/daily-horoscope-web/jest.config.ts",
         "passWithNoTests": true

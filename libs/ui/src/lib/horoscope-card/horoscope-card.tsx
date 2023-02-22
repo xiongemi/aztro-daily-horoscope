@@ -1,13 +1,9 @@
-import { Card, Text } from '@rneui/base';
 import React, { useEffect } from 'react';
 import {
-  ActivityIndicator,
   SafeAreaView,
   ScrollView,
-  View,
 } from 'react-native';
-import { styles } from 'react-native-style-tachyons';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { ActivityIndicator, Avatar, Card, DataTable, Divider, Text } from 'react-native-paper';
 import { connect } from 'react-redux';
 
 import {
@@ -31,42 +27,49 @@ export function HoroscopeCard({
   return (
     <SafeAreaView>
       <ScrollView>
-        <View>
+        <Card>
           {zodiacItem && (
             <>
-              <Card.Title>
-                <Icon name={zodiacItem?.icon} size={40} />
-              </Card.Title>
-              <Card.Title>{zodiacItem?.zodiacSign}</Card.Title>
+              <Avatar.Icon icon={zodiacItem?.icon} size={40} />
+              <Card.Title title={zodiacItem?.zodiacSign}></Card.Title>
             </>
           )}
-          <Card.Divider />
-          <Text h4 style={[styles.w100, styles.tc]}>
-            Your Horoscope for Today
-          </Text>
+          <Divider />
+          <Text>Your Horoscope for Today</Text>
           {loadingStatus === 'loaded' && horoscope ? (
             <>
-              <Text style={[styles.mt2, styles.f4]}>
-                {horoscope.description}
-              </Text>
-              <Text style={[styles.mt2]}>Mood: {horoscope.mood}</Text>
-              <Text style={[styles.mt2]}>Color: {horoscope.color}</Text>
-              <Text style={[styles.mt2]}>
-                Compatibility: {horoscope.compatibility}
-              </Text>
-              <Text style={[styles.mt2]}>
-                Lucky Number: {horoscope.luckyNumber}
-              </Text>
-              <Text style={[styles.mt2]}>
-                Lucky Time: {horoscope.luckyTime}
-              </Text>
+              <Text variant="bodyLarge">{horoscope.description}</Text>
+              <DataTable>
+                <DataTable.Row>
+                  <DataTable.Cell>Mood</DataTable.Cell>
+                  <DataTable.Cell>{horoscope.mood}</DataTable.Cell>
+                </DataTable.Row>
+                <DataTable.Row>
+                  <DataTable.Cell>Color</DataTable.Cell>
+                  <DataTable.Cell>{horoscope.color}</DataTable.Cell>
+                </DataTable.Row>
+                <DataTable.Row>
+                  <DataTable.Cell>Compatibility</DataTable.Cell>
+                  <DataTable.Cell>{horoscope.compatibility}</DataTable.Cell>
+                </DataTable.Row>
+                <DataTable.Row>
+                  <DataTable.Cell>Lucky Number</DataTable.Cell>
+                  <DataTable.Cell>{horoscope.luckyNumber}</DataTable.Cell>
+                </DataTable.Row>
+                <DataTable.Row>
+                  <DataTable.Cell>Lucky Time</DataTable.Cell>
+                  <DataTable.Cell>{horoscope.luckyTime}</DataTable.Cell>
+                </DataTable.Row>
+              </DataTable>
             </>
           ) : loadingStatus === 'error' ? (
-            <Text h2>Oops! Something went wrong. Please try agian.</Text>
+            <Text variant="displayMedium">
+              Oops! Something went wrong. Please try again.
+            </Text>
           ) : (
-            <ActivityIndicator size="large" />
+            <ActivityIndicator animating={true} size="large" />
           )}
-        </View>
+        </Card>
       </ScrollView>
     </SafeAreaView>
   );

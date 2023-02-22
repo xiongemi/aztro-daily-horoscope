@@ -1,9 +1,6 @@
-import { AppRegistry, StyleSheet } from 'react-native';
-import NativeTachyons from 'react-native-style-tachyons';
+import { AppRegistry } from 'react-native';
 import 'react-native-gesture-handler';
 
 import App from './app/App';
-
-NativeTachyons.build({}, StyleSheet);
 
 AppRegistry.registerComponent('DailyHoroscopeApp', () => App);

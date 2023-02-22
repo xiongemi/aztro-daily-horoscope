@@ -1,5 +1,4 @@
 import '@testing-library/jest-native/extend-expect';
-import 'react-native-gesture-handler/jestSetup';
 import { jest } from '@jest/globals';
 
 jest.mock('react-native-reanimated', () => {

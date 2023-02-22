@@ -1,49 +1,15 @@
-const getWebpackConfig = require('@nrwl/react/plugins/webpack');
+const { composePlugins, withNx } = require('@nrwl/webpack');
+const { withReact } = require('@nrwl/react');
 
-function getCustomWebpackConfig(webpackConfig) {
-  const config = getWebpackConfig(webpackConfig);
-  const isProduction = webpackConfig.mode === 'production';
-
-  if (!isProduction) {
-    config.resolve.alias = {
-      'react-native$': 'react-native-web',
-    };
-
-    config.module.rules.push(
-      {
-        test: /\.ttf$/,
-        loader: require.resolve('file-loader'),
-        options: { esModule: false, name: 'static/media/[path][name].[ext]' },
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: function (content) {
-          return (
-            /node_modules/.test(content) &&
-            !/\/@rneui\//.test(content) &&
-            !/\/react-native-vector-icons\//.test(content) &&
-            !/\/react-native-ratings\//.test(content)
-          );
-        },
-        use: {
-          loader: require.resolve('@nrwl/web/src/utils/web-babel-loader.js'),
-          options: {
-            presets: [
-              [
-                '@nrwl/react/babel',
-                {
-                  runtime: 'automatic',
-                  useBuiltIns: 'usage',
-                },
-              ],
-            ],
-          },
-        },
-      }
-    );
+// Nx plugins for webpack.
+module.exports = composePlugins(
+  withNx(),
+  withReact(),
+  (config, { options, context }) => {
+    // Note: This was added by an Nx migration.
+    // You should consider inlining the logic into this file.
+    // For more information on webpack config and Nx see:
+    // https://nx.dev/packages/webpack/documents/webpack-config-setup
+    return require('./webpack.old.js')(config, context);
   }
-
-  return config;
-}
-
-module.exports = getCustomWebpackConfig;
+);

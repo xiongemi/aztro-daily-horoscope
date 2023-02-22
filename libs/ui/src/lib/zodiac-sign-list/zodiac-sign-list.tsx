@@ -6,8 +6,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { FlatList } from 'react-native';
-import { ListItem } from '@rneui/base';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { List } from 'react-native-paper';
 import { connect } from 'react-redux';
 
 import {
@@ -31,13 +30,12 @@ export function ZodiacSignList({ setUserZodiacSignItem }: ZodiacSignListProps) {
       keyExtractor={keyExtractor}
       data={AdhZodiacSignList}
       renderItem={({ item }) => (
-        <ListItem bottomDivider onPress={() => zodiacListItemPress(item)}>
-          <Icon name={item.icon} />
-          <ListItem.Content>
-            <ListItem.Title>{item.zodiacSign}</ListItem.Title>
-          </ListItem.Content>
-          <ListItem.Chevron />
-        </ListItem>
+        <List.Item
+          title={item.zodiacSign}
+          left={(props) => <List.Icon {...props} icon={item.icon} />}
+          right={(props) => <List.Icon {...props} icon='chevron-right' />}
+          onPress={() => zodiacListItemPress(item)}
+        ></List.Item>
       )}
     />
   );
